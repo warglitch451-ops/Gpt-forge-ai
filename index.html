@@ -4,330 +4,900 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#09090d">
-<meta name="description" content="ForgeAI Studio — turn your ideas into websites and business plans with AI.">
-<title>ForgeAI Studio — Build Without Limits</title>
+<meta name="theme-color" content="#09090f">
+<meta name="description" content="ForgeAI Studio — turn your ideas into beautiful websites.">
+<title>ForgeAI Studio — AI Website Builder</title>
+
 <style>
-:root{color-scheme:dark;--bg:#09090d;--panel:#111118;--panel2:#171720;--line:#292936;--text:#f5f5fa;--muted:#9292a5;--purple:#a78bfa;--pink:#f0abfc;--green:#6ee7b7;--radius:15px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;color:inherit}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--purple);outline-offset:2px}button:disabled{opacity:.5;cursor:not-allowed}.app{min-height:100vh;display:grid;grid-template-columns:240px minmax(0,1fr)}.sidebar{border-right:1px solid var(--line);background:#0d0d12;padding:20px 14px;display:flex;flex-direction:column;gap:22px}.brand{display:flex;gap:11px;align-items:center;padding:2px 8px}.brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#a78bfa,#e879f9);display:grid;place-items:center;color:#171020;font-size:20px;font-weight:900}.brand strong{display:block;font-size:16px;letter-spacing:-.4px}.brand small{color:var(--muted);font-size:11px}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#686879;padding:0 10px 7px}.nav{display:grid;gap:5px}.nav button{border:1px solid transparent;background:transparent;text-align:left;padding:10px 12px;border-radius:10px;color:#aaaaba;display:flex;gap:10px;align-items:center}.nav button:hover,.nav button.active{background:#1b1925;border-color:#302b43;color:white}.nav button.active{box-shadow:inset 2px 0 var(--purple)}.nav-icon{width:19px;text-align:center}.side-bottom{margin-top:auto}.status-card{border:1px solid var(--line);background:#121219;border-radius:13px;padding:13px}.status-card p{font-size:12px;color:var(--muted);margin:6px 0 10px}.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px}.main{min-width:0}.topbar{height:66px;padding:0 25px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;background:#09090deF;backdrop-filter:blur(16px);z-index:5}.topbar-left,.topbar-right{display:flex;align-items:center;gap:10px;min-width:0}.crumb{font-size:13px;color:var(--muted)}.crumb b{color:var(--text)}.pill{font-size:11px;padding:4px 8px;border:1px solid #383047;color:#d6bcff;background:#20172b;border-radius:99px}.button{border:1px solid var(--line);background:#17171f;padding:9px 13px;border-radius:10px;transition:.15s;white-space:nowrap}.button:hover{border-color:#77708d;background:#22212c}.button.primary{border:0;background:linear-gradient(110deg,#a78bfa,#e879f9);color:#160d20;font-weight:800}.button.primary:hover{filter:brightness(1.08)}.button.ghost{background:transparent}.button.danger{color:#fda4af}.content{max-width:1600px;margin:auto;padding:27px}.page{display:none}.page.active{display:block}.hero{padding:8px 0 22px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.8px;color:var(--purple);font-weight:700}.hero h1{font-size:clamp(27px,4vw,43px);letter-spacing:-1.8px;line-height:1.1;margin:10px 0}.gradient{background:linear-gradient(90deg,#c4b5fd,#f0abfc,#93c5fd);-webkit-background-clip:text;background-clip:text;color:transparent}.sub{color:var(--muted);max-width:650px;margin:9px 0 0;line-height:1.7}.grid{display:grid;gap:16px}.builder-grid{grid-template-columns:minmax(300px,380px) minmax(0,1fr);align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0}.panel-head{padding:15px 17px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.panel-head h2,.panel-head h3{font-size:13px;margin:0;font-weight:750}.panel-body{padding:17px}.muted{color:var(--muted)}.tiny{font-size:11px}.label{display:block;font-size:12px;font-weight:650;color:#d8d8e4;margin:0 0 7px}.field{width:100%;border:1px solid #30303d;background:#0b0b11;border-radius:10px;color:var(--text);padding:11px 12px;outline:none}.field:focus{border-color:#9b87d7}.field::placeholder{color:#626273}textarea.field{resize:vertical;min-height:112px;line-height:1.6}.field-group{margin-bottom:16px}.row{display:flex;gap:9px;align-items:center}.row>*{min-width:0}.row .grow{flex:1}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid #343340;background:#17171f;color:#bdbdcc;padding:7px 10px;border-radius:9px;font-size:12px}.chip:hover,.chip.selected{border-color:#9d83ed;color:#eee3ff;background:#241d34}.templates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.template{border:1px solid var(--line);border-radius:10px;background:#15151c;padding:8px;text-align:left}.template:hover,.template.selected{border-color:var(--purple)}.template-art{height:55px;border-radius:6px;margin-bottom:8px;display:flex;flex-direction:column;gap:4px;padding:9px;background:linear-gradient(135deg,#25203b,#12121a)}.template-art span{height:4px;background:#c4b5fd;border-radius:4px;width:65%}.template-art span:nth-child(2){width:42%;opacity:.55}.template-art span:nth-child(3){width:25%;height:11px;background:#e879f9;margin-top:3px}.template strong{font-size:11px;display:block}.template small{font-size:10px;color:var(--muted)}.prompt-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}.workspace{display:grid;gap:14px}.preview-panel{min-height:530px}.preview-toolbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.device{border:1px solid var(--line);background:#101016;border-radius:8px;padding:6px 9px;font-size:11px;color:var(--muted)}.device.active{color:white;border-color:#8370b8}.preview-shell{background:#24242c;padding:12px;min-height:460px}.browser{background:white;color:#111;border-radius:8px;overflow:hidden;min-height:440px;box-shadow:0 20px 50px #0005}.browser-bar{height:29px;background:#e9e9ed;border-bottom:1px solid #d5d5da;display:flex;align-items:center;gap:5px;padding:0 10px}.browser-dot{width:7px;height:7px;border-radius:50%;background:#c5c5ce}.browser-address{margin-left:9px;background:#fff;border-radius:5px;color:#777;font-size:10px;padding:3px 10px;flex:1;max-width:320px}.preview-frame{display:block;width:100%;height:410px;border:0;background:white}.empty-preview{height:410px;display:grid;place-items:center;text-align:center;color:#8d8d9d;padding:25px}.empty-preview strong{display:block;color:#ddd;font-size:17px;margin:10px}.empty-icon{font-size:36px}.code-area{width:100%;min-height:270px;resize:vertical;background:#08080d;color:#d6d6e4;border:1px solid var(--line);border-radius:10px;padding:13px;font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}.section-title{font-size:15px;margin:0 0 5px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.feature-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px}.feature-card .emoji{font-size:22px}.feature-card h3{font-size:14px;margin:12px 0 6px}.feature-card p{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 13px}.output{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;color:#d7d7e5;font-size:13px}.output h1,.output h2,.output h3{color:#fff}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:17px 0}.metric{padding:15px;border:1px solid var(--line);background:#121219;border-radius:12px}.metric strong{font-size:23px;display:block;letter-spacing:-.5px}.metric span{color:var(--muted);font-size:11px}.project-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.project-card{border:1px solid var(--line);border-radius:12px;background:#121219;padding:14px}.project-card h3{font-size:13px;margin:0 0 5px;overflow-wrap:anywhere}.project-card p{font-size:11px;color:var(--muted);margin:0 0 12px}.project-card .row{flex-wrap:wrap}.divider{height:1px;background:var(--line);margin:18px 0}.notice{font-size:12px;color:#c4b5fd;background:#201b2b;border:1px solid #403253;border-radius:10px;padding:11px;line-height:1.6}.notice.warning{color:#fcdba3;background:#2a2112;border-color:#594322}.notice.success{color:#a7f3d0;background:#12251e;border-color:#234c3a}.settings-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.color-field{height:42px;width:100%;border:1px solid var(--line);border-radius:8px;background:#111;padding:4px}.file-input{display:none}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;background:#eee;color:#14121a;padding:11px 17px;border-radius:10px;font-size:13px;font-weight:700;box-shadow:0 12px 35px #0007;transition:.2s;max-width:90vw}.toast.show{opacity:1;transform:translate(-50%,0)}.loading{display:inline-block;width:13px;height:13px;border:2px solid #ffffff55;border-top-color:currentColor;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}@keyframes spin{to{transform:rotate(360deg)}}.footer-note{color:#696979;font-size:11px;margin-top:22px;text-align:center}.mobile-menu{display:none}
-@media(max-width:1050px){.app{grid-template-columns:205px minmax(0,1fr)}.builder-grid{grid-template-columns:1fr}.workspace{grid-row:1}.preview-panel{min-height:430px}.cards,.project-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:700px){.app{display:block}.sidebar{position:fixed;z-index:20;top:0;bottom:0;left:-255px;width:240px;transition:left .2s;box-shadow:12px 0 40px #0005}.sidebar.open{left:0}.mobile-menu{display:inline-block}.topbar{height:58px;padding:0 12px}.content{padding:18px 12px}.topbar .pill{display:none}.topbar-right .button{padding:8px 10px}.hero h1{letter-spacing:-1px}.cards,.project-list,.two-col,.settings-grid{grid-template-columns:1fr}.templates{grid-template-columns:repeat(3,minmax(0,1fr))}.preview-shell{padding:6px}.preview-frame{height:350px}.preview-panel{min-height:390px}.preview-toolbar{gap:4px}.device{padding:5px 6px}.metric-grid{gap:6px}.metric{padding:10px}.metric strong{font-size:18px}.panel-body{padding:13px}.panel-head{padding:13px}.prompt-footer{align-items:stretch}.prompt-footer .button{flex:1}.row.wrap-mobile{flex-wrap:wrap}}
+:root {
+  --bg:#09090f; --panel:#11111b; --panel2:#171725;
+  --border:#29293c; --text:#f5f4ff; --muted:#9292ab;
+  --purple:#9670ff; --pink:#ed70c6; --green:#65e6ad;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;font-size:14px}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+button:disabled{opacity:.45;cursor:not-allowed}
+.app{min-height:100vh;display:grid;grid-template-columns:235px minmax(0,1fr)}
+.sidebar{background:#0d0d15;border-right:1px solid var(--border);padding:20px 14px;display:flex;flex-direction:column;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;padding:3px 8px}
+.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#a181ff,#ed70c6);display:grid;place-items:center;color:white;font-size:22px;font-weight:900}
+.brand h2{font-size:16px;margin:0;letter-spacing:-.5px}
+.brand small{color:var(--muted);font-size:10px}
+.nav-label{color:#77778f;font-size:10px;font-weight:800;letter-spacing:1.5px;padding:0 10px;margin-bottom:8px}
+.nav{display:grid;gap:5px}
+.nav button{border:0;background:transparent;color:#aaaac0;text-align:left;padding:12px;border-radius:10px;display:flex;gap:11px;align-items:center}
+.nav button:hover,.nav button.active{background:#242039;color:white}
+.nav button.active{box-shadow:inset 3px 0 var(--purple)}
+.sidebar-bottom{margin-top:auto}
+.credit{background:linear-gradient(135deg,#211b38,#181523);border:1px solid #39304e;padding:15px;border-radius:14px}
+.credit strong{display:block;margin-bottom:7px}
+.credit p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
+.main{min-width:0}
+.topbar{height:70px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 25px;gap:12px}
+.top-left{display:flex;align-items:center;gap:10px}
+.topbar h3{margin:0;font-size:14px}
+.status{color:var(--green);font-size:11px;display:flex;align-items:center;gap:6px}
+.dot{width:7px;height:7px;background:var(--green);border-radius:50%}
+.top-actions{display:flex;align-items:center;gap:8px}
+.content{max-width:1500px;margin:auto;padding:28px}
+.page{display:none}
+.page.active{display:block}
+.eyebrow{color:#b39bff;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,4vw,43px);letter-spacing:-1.8px;line-height:1.1;margin:12px 0}
+.gradient{background:linear-gradient(90deg,#a991ff,#ee86d3);-webkit-background-clip:text;background-clip:text;color:transparent}
+.muted{color:var(--muted);line-height:1.7}
+.hero{margin:12px 0 27px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;min-width:0}
+.panel h3,.panel h2{margin-top:0}
+.builder-grid{display:grid;grid-template-columns:minmax(290px,390px) minmax(0,1fr);gap:18px;align-items:start}
+.stack{display:grid;gap:16px}
+.label{display:block;color:#d0cfe0;font-size:12px;font-weight:700;margin-bottom:9px}
+textarea,input,select{width:100%;background:#0b0b13;border:1px solid #303047;color:white;padding:12px;border-radius:10px;outline:none}
+textarea{resize:vertical;min-height:115px;line-height:1.6}
+input:focus,textarea:focus,select:focus{border-color:var(--purple)}
+select option{background:#11111b}
+.field{margin-bottom:17px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{background:#1b1b2a;border:1px solid #33334a;color:#c4c2d9;border-radius:9px;padding:8px 10px;font-size:11px}
+.chip.active{background:#30234e;border-color:var(--purple);color:white}
+.btn{border:1px solid var(--border);background:#1b1b29;color:white;border-radius:10px;padding:10px 14px;font-weight:700;font-size:12px}
+.btn:hover{border-color:#8070b8}
+.btn-primary{background:linear-gradient(110deg,#8d65f8,#c66ee6);border:0;color:white}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-green{border-color:#2b7058;color:var(--green)}
+.btn-danger{color:#ff8f9d}
+.btn-wide{width:100%;padding:14px}
+.row{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.row-between{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.small{font-size:11px}
+.preview-panel{padding:0;overflow:hidden}
+.preview-head{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.browser-dots{display:flex;gap:5px}
+.browser-dots i{width:8px;height:8px;border-radius:50%;background:#4c4c62}
+.browser-bar{display:flex;align-items:center;gap:8px;background:#0d0d16;border:1px solid #2b2b3c;padding:7px 10px;border-radius:8px;color:#a4a4ba;font-size:10px;min-width:0}
+#previewFrame{display:block;border:0;background:white;width:100%;height:650px}
+.preview-empty{min-height:450px;display:grid;place-items:center;text-align:center;padding:30px;color:var(--muted)}
+.preview-empty .big{font-size:45px;margin-bottom:10px}
+.editor{width:100%;min-height:360px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;white-space:pre;tab-size:2}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.metric{background:var(--panel);border:1px solid var(--border);padding:17px;border-radius:13px}
+.metric span{display:block;color:var(--muted);font-size:11px}
+.metric strong{display:block;font-size:25px;margin-top:8px}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.project-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;min-width:0}
+.project-icon{width:42px;height:42px;background:#26203b;border-radius:12px;display:grid;place-items:center;font-size:21px;margin-bottom:13px}
+.project-card h3{margin:0 0 8px;overflow-wrap:anywhere}
+.project-card p{color:var(--muted);font-size:12px;line-height:1.6}
+.empty{border:1px dashed #38384d;border-radius:14px;padding:35px 20px;text-align:center;color:var(--muted)}
+.setting-row{padding:16px 0;border-bottom:1px solid var(--border)}
+.setting-row:last-child{border-bottom:0}
+.setting-row p{font-size:12px;color:var(--muted);line-height:1.6}
+.notice{border:1px solid #51422a;background:#211b11;color:#f4d9a0;padding:13px;border-radius:10px;font-size:12px;line-height:1.6}
+.success{color:var(--green)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#232238;border:1px solid #4c4269;color:white;padding:12px 18px;border-radius:12px;z-index:99;box-shadow:0 10px 40px #0008;max-width:90%;text-align:center}
+.hidden{display:none!important}
+.mobile-menu{display:none}
+@media(max-width:1000px){.app{grid-template-columns:190px minmax(0,1fr)}.builder-grid{grid-template-columns:1fr}.sidebar{padding:16px 10px}.content{padding:20px}}
+@media(max-width:680px){
+ .app{display:block}
+ .sidebar{display:none;position:fixed;inset:0 auto 0 0;width:260px;z-index:50;box-shadow:20px 0 70px #0009}
+ .sidebar.open{display:flex}
+ .mobile-menu{display:inline-flex}
+ .topbar{height:62px;padding:0 13px}
+ .content{padding:17px 12px}
+ .hero h1{letter-spacing:-1px}
+ .panel{padding:15px}
+ #previewFrame{height:540px}
+ .metrics{gap:7px}
+ .metric{padding:12px}
+ .metric strong{font-size:20px}
+ .metric span{font-size:10px}
+ .topbar .status{display:none}
+}
 </style>
 </head>
+
 <body>
 <div class="app">
 <aside class="sidebar" id="sidebar">
-  <div class="brand"><div class="brand-mark">F</div><div><strong>ForgeAI Studio</strong><small>IDEAS → REALITY</small></div></div>
-  <div><div class="nav-label">Workspace</div><nav class="nav">
-    <button class="active" data-page="builder"><span class="nav-icon">✦</span> AI Website Builder</button>
-    <button data-page="entrepreneur"><span class="nav-icon">↗</span> Entrepreneur AI</button>
-    <button data-page="projects"><span class="nav-icon">▦</span> My Projects</button>
-    <button data-page="plans"><span class="nav-icon">◇</span> Plans & Monetization</button>
-  </nav></div>
-  <div><div class="nav-label">Manage</div><nav class="nav">
-    <button data-page="settings"><span class="nav-icon">⚙</span> AI Settings</button>
-    <button data-page="help"><span class="nav-icon">?</span> Help & Setup</button>
-  </nav></div>
-  <div class="side-bottom"><div class="status-card"><div><span class="status-dot"></span><strong id="apiStatus">Demo workspace</strong></div><p>Generate websites, edit designs, and export your code.</p><button class="button" style="width:100%" data-goto="settings">Configure Gemini ↗</button></div><div class="tiny muted" style="padding:13px 5px 0">FORGEAI STUDIO · SINGLE-FILE EDITION</div></div>
+  <div class="brand">
+    <div class="logo">F</div>
+    <div><h2>ForgeAI Studio</h2><small>BUILD WHAT YOU IMAGINE</small></div>
+  </div>
+  <div>
+    <div class="nav-label">WORKSPACE</div>
+    <nav class="nav">
+      <button class="active" data-page="builder">✦ <span>Website Builder</span></button>
+      <button data-page="projects">▦ <span>My Projects</span></button>
+      <button data-page="entrepreneur">◈ <span>Entrepreneur AI</span></button>
+    </nav>
+  </div>
+  <div>
+    <div class="nav-label">PREFERENCES</div>
+    <nav class="nav">
+      <button data-page="settings">⚙ <span>Settings & API</span></button>
+      <button data-page="help">ⓘ <span>Help & Guide</span></button>
+    </nav>
+  </div>
+  <div class="sidebar-bottom">
+    <div class="credit">
+      <strong>✦ ForgeAI Studio 2.0</strong>
+      <p>Build, preview, edit and export websites from one workspace.</p>
+    </div>
+  </div>
 </aside>
 
 <main class="main">
-<header class="topbar">
-  <div class="topbar-left"><button class="button mobile-menu" id="menuBtn" aria-label="Open menu">☰</button><div class="crumb">ForgeAI <span style="color:#555">/</span> <b id="crumbName">Website Builder</b></div></div>
-  <div class="topbar-right"><span class="pill">✦ AI WORKSPACE</span><button class="button" id="saveBtn">Save draft</button><button class="button primary" id="exportBtn">↓ Export HTML</button></div>
-</header>
-
-<div class="content">
-<section class="page active" id="page-builder">
-  <div class="hero"><div class="eyebrow">YOUR CREATIVE ENGINE</div><h1>Build something <span class="gradient">extraordinary.</span></h1><p class="sub">Describe your idea. Forge a website. Refine it with AI or edit the code yourself. Your next big thing starts here.</p></div>
-  <div class="grid builder-grid">
-    <div class="panel">
-      <div class="panel-head"><h2>✦ Create your website</h2><span class="tiny muted">STEP 01</span></div>
-      <div class="panel-body">
-        <div class="field-group"><label class="label" for="prompt">What do you want to build?</label><textarea class="field" id="prompt" placeholder="Example: A premium sneaker brand website with a bold hero, product cards, customer reviews, and a dark editorial design..."></textarea><div class="tiny muted" style="margin-top:6px">Tip: describe your audience, style, colors, pages, and features.</div></div>
-        <div class="field-group"><label class="label">Start with a template</label><div class="templates">
-          <button class="template selected" data-template="startup"><div class="template-art"><span></span><span></span><span></span></div><strong>Startup</strong><small>Modern SaaS</small></button>
-          <button class="template" data-template="agency"><div class="template-art" style="background:linear-gradient(135deg,#29221b,#131313)"><span style="background:#fbbf24"></span><span></span><span style="background:#fbbf24"></span></div><strong>Agency</strong><small>Creative studio</small></button>
-          <button class="template" data-template="portfolio"><div class="template-art" style="background:linear-gradient(135deg,#1c2a2c,#121313)"><span style="background:#6ee7b7"></span><span></span><span style="background:#6ee7b7"></span></div><strong>Portfolio</strong><small>Personal brand</small></button>
-        </div></div>
-        <div class="field-group"><label class="label">Visual direction</label><div class="chips" id="styleChips"><button class="chip selected" data-style="premium dark">Premium dark</button><button class="chip" data-style="minimal light">Minimal light</button><button class="chip" data-style="bold colorful">Bold & colorful</button><button class="chip" data-style="editorial luxury">Editorial</button></div></div>
-        <div class="field-group"><label class="label" for="extra">Extra requirements <span class="muted">(optional)</span></label><input class="field" id="extra" placeholder="Animations, pricing, testimonials, FAQ..."></div>
-        <button class="button primary" id="generateBtn" style="width:100%;padding:12px">✦ Generate with Gemini</button>
-        <div class="prompt-footer"><button class="button" id="quickStartBtn">Try sample website</button><button class="button ghost" data-goto="settings">API settings ↗</button></div>
-        <p class="tiny muted" style="margin:12px 0 0">AI generation uses your configured Gemini API key. Sample mode works without one.</p>
-      </div>
+  <header class="topbar">
+    <div class="top-left">
+      <button class="btn mobile-menu" id="menuBtn" aria-label="Open navigation">☰</button>
+      <h3 id="pageTitle">Website Builder</h3>
     </div>
-
-    <div class="workspace">
-      <div class="panel preview-panel">
-        <div class="panel-head"><h2>Live preview</h2><div class="preview-toolbar"><button class="device active" data-device="desktop">▰ Desktop</button><button class="device" data-device="tablet">▯ Tablet</button><button class="device" data-device="mobile">▯ Mobile</button></div></div>
-        <div class="preview-shell"><div class="browser" id="browser">
-          <div class="browser-bar"><span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span><div class="browser-address">your-project.forgeai.app</div></div>
-          <div id="emptyPreview" class="empty-preview"><div><div class="empty-icon">✧</div><strong>Your canvas is ready.</strong><span>Generate a website or load a sample to see it here.</span></div></div>
-          <iframe class="preview-frame" id="previewFrame" title="Generated website preview" sandbox="allow-scripts allow-forms allow-modals" style="display:none"></iframe>
-        </div></div>
-        <div class="panel-body" style="padding-top:12px;padding-bottom:12px"><div class="row" style="justify-content:space-between;flex-wrap:wrap"><span class="tiny muted" id="previewStatus">No website generated yet</span><button class="button" id="refreshPreviewBtn">↻ Refresh preview</button></div></div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head"><h2>Code studio</h2><div class="row"><button class="button" id="undoBtn">↶ Undo</button><button class="button" id="applyCodeBtn">Apply code</button></div></div>
-        <div class="panel-body"><p class="tiny muted" style="margin-top:0">Edit the full HTML below, then select <b>Apply code</b> to update the preview.</p><textarea class="code-area" id="codeEditor" spellcheck="false" placeholder="Your generated HTML will appear here..."></textarea><div class="row" style="justify-content:space-between;margin-top:10px;flex-wrap:wrap"><span class="tiny muted" id="codeStats">0 characters</span><button class="button" id="copyCodeBtn">Copy code</button></div></div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head"><h2>AI design assistant</h2><span class="tiny muted">EDIT BY CHAT</span></div>
-        <div class="panel-body"><p class="tiny muted" style="margin-top:0">Ask for changes to your current website. Gemini will return updated HTML.</p><textarea class="field" id="editPrompt" placeholder="Example: Make the hero more premium, add a pricing section, and change the buttons to purple..." style="min-height:85px"></textarea><div class="row" style="justify-content:space-between;margin-top:10px;flex-wrap:wrap"><span class="tiny muted">Your current website is used as context.</span><button class="button primary" id="editBtn">✦ Apply AI edits</button></div></div>
-      </div>
-
-      <div class="panel">
-        <div class="panel-head"><h2>Manual design controls</h2><span class="tiny muted">QUICK EDIT</span></div>
-        <div class="panel-body"><div class="two-col">
-          <div class="field-group"><label class="label" for="replaceText">Find text to replace</label><input class="field" id="replaceText" placeholder="Text currently on your page"></div>
-          <div class="field-group"><label class="label" for="newText">Replace it with</label><input class="field" id="newText" placeholder="Your new text"></div>
-        </div>
-        <div class="row" style="margin-bottom:16px;flex-wrap:wrap"><button class="button" id="replaceBtn">Replace text</button><label class="label" for="bgColor" style="margin:0">Accent color</label><input type="color" id="bgColor" class="color-field" value="#a78bfa" style="width:65px"><button class="button" id="colorBtn">Apply color</button></div>
-        <div class="two-col">
-          <div class="field-group"><label class="label" for="imageUrl">Change first image by URL</label><input class="field" id="imageUrl" placeholder="https://example.com/image.jpg"></div>
-          <div class="field-group"><label class="label" for="imageUpload">Or upload an image</label><input class="field" id="imageUpload" type="file" accept="image/*" style="padding:8px"></div>
-        </div>
-        <div class="row" style="flex-wrap:wrap"><button class="button" id="imageUrlBtn">Apply image URL</button><span class="tiny muted">Image uploads are embedded in the current draft.</span></div>
-        </div>
-      </div>
+    <div class="top-actions">
+      <div class="status"><span class="dot"></span> Local mode available</div>
+      <button class="btn btn-primary" id="newProjectBtn">＋ New website</button>
     </div>
-  </div>
-  <div class="footer-note">ForgeAI Studio is a prototype. Review generated code before publishing it.</div>
-</section>
+  </header>
 
-<section class="page" id="page-entrepreneur">
-  <div class="hero"><div class="eyebrow">FROM IDEA TO EXECUTION</div><h1>Meet your <span class="gradient">Entrepreneur AI.</span></h1><p class="sub">Turn a rough idea into a business concept, launch strategy, customer profile, and practical business plan.</p></div>
-  <div class="grid builder-grid">
-    <div class="panel"><div class="panel-head"><h2>Business idea lab</h2></div><div class="panel-body">
-      <div class="field-group"><label class="label" for="businessIdea">Describe your business idea</label><textarea class="field" id="businessIdea" placeholder="Example: An AI website-building service for small businesses in India..."></textarea></div>
-      <div class="field-group"><label class="label" for="businessBudget">Starting budget</label><select class="field" id="businessBudget"><option>Under ₹10,000</option><option>₹10,000–₹50,000</option><option>₹50,000–₹2 lakh</option><option>₹2 lakh+</option><option>Not decided</option></select></div>
-      <div class="field-group"><label class="label" for="businessMarket">Target market</label><input class="field" id="businessMarket" placeholder="e.g. Indian small businesses, global startups"></div>
-      <div class="field-group"><label class="label" for="businessGoal">Main goal</label><select class="field" id="businessGoal"><option>Get first paying customers</option><option>Validate the idea</option><option>Create a business plan</option><option>Grow a current business</option><option>Prepare a pitch for investors</option></select></div>
-      <button class="button primary" id="businessBtn" style="width:100%">✦ Build my business plan</button>
-      <p class="tiny muted">Requires Gemini for AI-generated advice. This tool is not financial or legal advice.</p>
-    </div></div>
-    <div class="panel"><div class="panel-head"><h2>Business plan preview</h2><button class="button" id="copyBusinessBtn">Copy plan</button></div><div class="panel-body"><div id="businessOutput" class="output muted">Your business plan will appear here. Include your idea, budget, and target market for more useful results.</div><div class="divider"></div><button class="button" id="makeWebsiteBtn">Turn this idea into a website ↗</button></div></div>
-  </div>
-  <div class="cards" style="margin-top:16px">
-    <div class="feature-card"><div class="emoji">🎯</div><h3>Find your audience</h3><p>Define customer segments, pain points, and positioning to test.</p></div>
-    <div class="feature-card"><div class="emoji">💡</div><h3>Validate the idea</h3><p>Generate customer interview questions and low-cost experiments before investing heavily.</p></div>
-    <div class="feature-card"><div class="emoji">📈</div><h3>Plan your launch</h3><p>Build an initial roadmap with marketing channels and measurable milestones.</p></div>
-  </div>
-</section>
+  <div class="content">
+    <section class="page active" id="page-builder">
+      <div class="hero">
+        <div class="eyebrow">YOUR IDEA. YOUR WEBSITE.</div>
+        <h1>Turn ideas into <span class="gradient">digital reality.</span></h1>
+        <p class="muted">Describe what you imagine. Generate a website, customize the design, preview it live and export your code.</p>
+      </div>
 
-<section class="page" id="page-projects">
-  <div class="hero"><div class="eyebrow">YOUR WORKSPACE</div><h1>Ideas in <span class="gradient">progress.</span></h1><p class="sub">Save drafts in this browser and reopen them when you need to keep working.</p></div>
-  <div class="metric-grid"><div class="metric"><strong id="projectCount">0</strong><span>Saved projects</span></div><div class="metric"><strong id="currentState">Empty</strong><span>Current canvas</span></div><div class="metric"><strong>HTML</strong><span>Export format</span></div></div>
-  <div class="panel"><div class="panel-head"><h2>Saved projects</h2><button class="button" id="newProjectBtn">＋ New draft</button></div><div class="panel-body"><div id="projectList" class="project-list"></div><p id="noProjects" class="muted">No saved projects yet. Generate a website and click “Save draft”.</p></div></div>
-</section>
+      <div class="builder-grid">
+        <div class="stack">
+          <section class="panel">
+            <div class="row-between">
+              <h3 style="margin-bottom:16px">Create your website</h3>
+              <span class="small muted">Step 1 of 3</span>
+            </div>
 
-<section class="page" id="page-plans">
-  <div class="hero"><div class="eyebrow">FUTURE BUSINESS MODEL</div><h1>Build. Launch. <span class="gradient">Monetize.</span></h1><p class="sub">Explore example subscription tiers and advertising placements for a future ForgeAI business. These are UI mockups only, not active billing or advertising.</p></div>
-  <div class="cards">
-    <div class="feature-card"><div class="eyebrow">STARTER</div><h3>Free</h3><div style="font-size:28px;font-weight:800">₹0 <span class="muted tiny">/ month</span></div><p>Try the builder, experiment with templates, and export sample projects.</p><ul class="muted tiny"><li>Starter templates</li><li>Local draft saving</li><li>HTML export</li></ul><button class="button" style="width:100%" data-goto="builder">Try builder</button></div>
-    <div class="feature-card" style="border-color:#7058a2"><div class="eyebrow">PRO CONCEPT</div><h3>Creator</h3><div style="font-size:28px;font-weight:800">₹499 <span class="muted tiny">/ month</span></div><p>Example pricing for a potential paid tier after usage limits and support are implemented.</p><ul class="muted tiny"><li>More AI generations</li><li>Premium templates</li><li>Project history</li></ul><button class="button" style="width:100%" id="creatorMockBtn">Preview upgrade message</button></div>
-    <div class="feature-card"><div class="eyebrow">TEAMS</div><h3>Agency</h3><div style="font-size:28px;font-weight:800">Custom</div><p>Example tier for agencies that need team collaboration and client workflows.</p><ul class="muted tiny"><li>Shared workspaces</li><li>Client projects</li><li>Team access</li></ul><button class="button" style="width:100%" id="agencyMockBtn">Preview agency message</button></div>
-  </div>
-  <div class="panel" style="margin-top:16px"><div class="panel-head"><h2>Advertising placement mockup</h2><span class="pill">DEMO ONLY</span></div><div class="panel-body"><div style="border:1px dashed #62577a;border-radius:12px;padding:24px;text-align:center;background:linear-gradient(135deg,#171421,#101016)"><div class="eyebrow">SPONSORED SPACE</div><h3 style="margin:8px 0">Your workspace, your creative flow.</h3><p class="muted">This is a placeholder to demonstrate where an optional sponsor card could appear. No ad network is connected.</p><button class="button" id="adMockBtn">Preview sponsor interaction</button></div></div></div>
-  <div class="notice warning" style="margin-top:16px">Before selling subscriptions: implement real authentication, server-side usage tracking, payment processing, customer data storage, support, and abuse protection. Pricing here is illustrative only.</div>
-</section>
+            <div class="field">
+              <label class="label" for="prompt">Describe your website</label>
+              <textarea id="prompt" placeholder="Example: Create a premium sneaker brand website called NOVA with a dark background, product cards, a bold hero section and a shopping button."></textarea>
+            </div>
 
-<section class="page" id="page-settings">
-  <div class="hero"><div class="eyebrow">CONFIGURATION</div><h1>Make it <span class="gradient">intelligent.</span></h1><p class="sub">Configure Gemini for website generation, chat-based editing, and business planning.</p></div>
-  <div class="settings-grid">
-    <div class="panel"><div class="panel-head"><h2>Google Gemini API</h2><span class="tiny muted">AI PROVIDER</span></div><div class="panel-body">
-      <div class="notice warning" style="margin-bottom:17px"><b>Security warning:</b> This single-file version calls Gemini from your browser. Your key can be exposed to anyone who can inspect the page or browser traffic. Use a test key with restrictions; never use this approach for a public customer-facing service.</div>
-      <div class="field-group"><label class="label" for="apiKey">Gemini API key</label><div class="row"><input class="field grow" id="apiKey" type="password" autocomplete="off" placeholder="Paste your Gemini API key"><button class="button" id="toggleKeyBtn">Show</button></div><div class="tiny muted" style="margin-top:6px">Create a key in Google AI Studio. Never share it in chat or commit it to GitHub.</div></div>
-      <div class="field-group"><label class="label" for="modelName">Gemini model ID</label><input class="field" id="modelName" value="gemini-3.8-flash" placeholder="Use a supported model ID"><div class="tiny muted" style="margin-top:6px">Model availability can change. Check the official Gemini model documentation if a model is unavailable.</div></div>
-      <div class="field-group"><label class="label" for="temperature">Creativity: <span id="tempValue">0.8</span></label><input class="field" id="temperature" type="range" min="0" max="1.5" step="0.1" value="0.8" style="padding:0"></div>
-      <div class="row" style="flex-wrap:wrap"><button class="button primary" id="saveSettingsBtn">Save settings</button><button class="button" id="testApiBtn">Test Gemini API</button></div>
-      <div id="apiMessage" class="tiny muted" style="margin-top:12px">API not tested yet.</div>
-      <div class="divider"></div><button class="button danger" id="clearKeyBtn">Clear saved API key</button>
-    </div></div>
-    <div class="panel"><div class="panel-head"><h2>Studio preferences</h2></div><div class="panel-body">
-      <div class="field-group"><label class="label">Data storage</label><div class="notice">Drafts and settings are stored in this browser's local storage. They are not automatically synced to another device.</div></div>
-      <div class="field-group"><label class="label">Export</label><p class="muted">Export downloads the current website HTML. Images referenced by external URLs still require an internet connection. Uploaded images are embedded in the current draft.</p></div>
-      <div class="field-group"><label class="label">Hosting</label><p class="muted">GitHub Pages can host this front end. It cannot run a private Node.js backend, database, or secure API proxy by itself.</p></div>
-      <div class="field-group"><label class="label">Prototype limitations</label><ul class="muted"><li>No real user accounts</li><li>No cloud project sync</li><li>No payment processing</li><li>No subscription enforcement</li><li>No private backend API proxy</li></ul></div>
-      <button class="button" id="resetAppBtn">Reset studio draft</button>
-    </div></div>
-  </div>
-</section>
+            <div class="field">
+              <label class="label">Website category</label>
+              <div class="chips" id="categoryChips">
+                <button class="chip active" data-value="startup">SaaS / Startup</button>
+                <button class="chip" data-value="agency">Agency</button>
+                <button class="chip" data-value="portfolio">Portfolio</button>
+                <button class="chip" data-value="restaurant">Restaurant</button>
+                <button class="chip" data-value="ecommerce">E-commerce</button>
+                <button class="chip" data-value="business">Business</button>
+              </div>
+            </div>
 
-<section class="page" id="page-help">
-  <div class="hero"><div class="eyebrow">GET STARTED</div><h1>From idea to <span class="gradient">launch.</span></h1><p class="sub">Everything you need to try this single-file prototype.</p></div>
-  <div class="grid" style="gap:12px">
-    <div class="panel"><div class="panel-head"><h2>01 — Run it</h2></div><div class="panel-body"><p>Save this complete file as <b>index.html</b>. Open it in a modern browser or publish it using GitHub Pages. Sample website mode works without an API key.</p></div></div>
-    <div class="panel"><div class="panel-head"><h2>02 — Configure Gemini</h2></div><div class="panel-body"><p>Open Google AI Studio, create a Gemini API key, then open <b>AI Settings</b> in ForgeAI Studio. Enter your key and a currently supported model ID, save settings, and test the connection.</p><p class="muted">Official links: <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Get an API key</a> · <a href="https://ai.google.dev/gemini-api/docs/models" target="_blank" rel="noopener noreferrer">Model documentation</a></p></div></div>
-    <div class="panel"><div class="panel-head"><h2>03 — Generate and edit</h2></div><div class="panel-body"><p>Write a detailed prompt, choose a style, and generate. Use AI design assistant for bigger changes, manual controls for simple changes, and Code Studio for direct HTML edits.</p></div></div>
-    <div class="panel"><div class="panel-head"><h2>04 — Save and export</h2></div><div class="panel-body"><p>Save a draft to store it in this browser, then download the current website using <b>Export HTML</b>. Keep backups of your code before making major edits.</p></div></div>
+            <div class="field">
+              <label class="label" for="style">Visual direction</label>
+              <select id="style">
+                <option value="dark">Dark premium</option>
+                <option value="light">Clean light</option>
+                <option value="vibrant">Vibrant gradient</option>
+                <option value="minimal">Minimal editorial</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label class="label" for="extra">Extra requirements (optional)</label>
+              <input id="extra" placeholder="e.g. pricing, testimonials, FAQ, contact form">
+            </div>
+
+            <button class="btn btn-primary btn-wide" id="generateBtn">✦ Generate website</button>
+            <p class="muted small" id="generationStatus" aria-live="polite">Local mode is ready. No API key required.</p>
+          </section>
+
+          <section class="panel">
+            <h3>Quick actions</h3>
+            <div class="row">
+              <button class="btn" id="saveBtn">▣ Save project</button>
+              <button class="btn" id="exportBtn">↓ Export HTML</button>
+              <button class="btn" id="resetBtn">↺ Reset editor</button>
+            </div>
+            <p class="muted small">Projects are saved in this browser. Clearing browser data can remove local projects.</p>
+          </section>
+
+          <section class="panel">
+            <h3>AI design assistant</h3>
+            <p class="muted small">Tell the generator how you'd like to improve the current website.</p>
+            <textarea id="editPrompt" style="min-height:85px" placeholder="e.g. Make the hero more premium and add a testimonials section"></textarea>
+            <button class="btn btn-primary btn-wide" id="applyDesignBtn" style="margin-top:10px">Apply design request</button>
+          </section>
+
+          <section class="panel">
+            <h3>Quick customization</h3>
+            <div class="field">
+              <label class="label" for="replaceFrom">Replace text on the page</label>
+              <input id="replaceFrom" placeholder="Existing text">
+            </div>
+            <div class="field">
+              <label class="label" for="replaceTo">New text</label>
+              <input id="replaceTo" placeholder="Your new text">
+            </div>
+            <button class="btn" id="replaceBtn">Replace text</button>
+            <div class="field" style="margin-top:17px">
+              <label class="label" for="accent">Accent color</label>
+              <div class="row">
+                <input id="accent" type="color" value="#8b5cf6" style="width:55px;height:42px;padding:4px">
+                <button class="btn" id="colorBtn">Apply color</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="stack">
+          <section class="panel preview-panel">
+            <div class="preview-head">
+              <div class="row">
+                <div class="browser-dots"><i></i><i></i><i></i></div>
+                <div class="browser-bar" id="previewAddress">forgeai.local / preview</div>
+              </div>
+              <div class="row">
+                <button class="btn" data-preview="desktop">Desktop</button>
+                <button class="btn" data-preview="mobile">Mobile</button>
+                <button class="btn" id="openPreviewBtn">↗ Open preview</button>
+              </div>
+            </div>
+            <div id="emptyPreview" class="preview-empty">
+              <div>
+                <div class="big">✦</div>
+                <strong>Your next website starts here.</strong>
+                <p class="muted">Write a prompt and click Generate website.</p>
+              </div>
+            </div>
+            <div id="frameWrap" class="hidden">
+              <iframe id="previewFrame" title="Generated website preview" sandbox="allow-scripts allow-forms allow-modals allow-popups"></iframe>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="row-between">
+              <div>
+                <h3 style="margin-bottom:5px">Code Studio</h3>
+                <p class="muted small" style="margin:0">Edit the generated HTML directly.</p>
+              </div>
+              <span class="small muted" id="codeInfo">No website generated</span>
+            </div>
+            <textarea id="codeEditor" class="editor" spellcheck="false" placeholder="Your generated HTML will appear here..."></textarea>
+            <div class="row" style="margin-top:12px">
+              <button class="btn btn-primary" id="applyCodeBtn">Apply code</button>
+              <button class="btn" id="undoBtn">↶ Undo</button>
+              <button class="btn" id="redoBtn">↷ Redo</button>
+              <button class="btn" id="copyCodeBtn">Copy code</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-projects">
+      <div class="hero">
+        <div class="eyebrow">YOUR WORKSPACE</div>
+        <h1>My <span class="gradient">projects.</span></h1>
+        <p class="muted">Continue building from your saved websites.</p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><span>Saved projects</span><strong id="projectCount">0</strong></div>
+        <div class="metric"><span>Storage</span><strong style="font-size:19px">Local</strong></div>
+        <div class="metric"><span>Export format</span><strong style="font-size:19px">HTML</strong></div>
+      </div>
+      <div id="projectsGrid" class="projects-grid"></div>
+    </section>
+
+    <section class="page" id="page-entrepreneur">
+      <div class="hero">
+        <div class="eyebrow">IDEA TO ACTION</div>
+        <h1>Your AI <span class="gradient">business planner.</span></h1>
+        <p class="muted">Turn an idea into a structured business plan, with or without an AI API.</p>
+      </div>
+      <div class="panel" style="max-width:800px">
+        <div class="field">
+          <label class="label" for="businessIdea">Your business idea</label>
+          <textarea id="businessIdea" placeholder="e.g. An AI website builder for small businesses and freelancers"></textarea>
+        </div>
+        <div class="field">
+          <label class="label" for="businessBudget">Starting budget</label>
+          <select id="businessBudget">
+            <option value="₹0–₹5,000">₹0–₹5,000</option>
+            <option value="₹5,000–₹25,000">₹5,000–₹25,000</option>
+            <option value="₹25,000–₹1,00,000">₹25,000–₹1,00,000</option>
+            <option value="₹1,00,000+">₹1,00,000+</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="businessBtn">✦ Generate business plan</button>
+        <div id="businessOutput" style="margin-top:20px"></div>
+        <button class="btn hidden" id="businessDownload" style="margin-top:12px">Download business plan</button>
+      </div>
+    </section>
+
+    <section class="page" id="page-settings">
+      <div class="hero">
+        <div class="eyebrow">CONFIGURATION</div>
+        <h1>Settings & <span class="gradient">API.</span></h1>
+        <p class="muted">Choose local generation or connect a compatible Gemini model for AI-assisted generation.</p>
+      </div>
+      <div class="panel" style="max-width:800px">
+        <div class="setting-row">
+          <strong>Generation mode</strong>
+          <p>Local mode works without a key. Gemini mode sends your prompt to Google's API.</p>
+          <select id="generationMode">
+            <option value="local">Local generator — no API required</option>
+            <option value="gemini">Gemini API — private testing</option>
+          </select>
+        </div>
+        <div class="setting-row">
+          <strong>Gemini API key</strong>
+          <p>For private testing only. A key entered here is visible to the browser and can be extracted from a public website. Do not use a production or billing-enabled secret key here.</p>
+          <input id="apiKey" type="password" autocomplete="off" placeholder="Paste your Gemini API key">
+          <label class="row small" style="margin-top:12px"><input id="showKey" type="checkbox" style="width:auto"> Show API key</label>
+          <button class="btn" id="saveSettingsBtn" style="margin-top:10px">Save settings</button>
+        </div>
+        <div class="setting-row">
+          <strong>Gemini model</strong>
+          <p>Enter a model ID supported by your Google AI API account. Model availability and quotas can change.</p>
+          <input id="modelName" value="gemini-2.5-flash" placeholder="Model ID">
+        </div>
+        <div class="notice">Production security: keep secret API keys on a server, not in public JavaScript. GitHub Pages can host this frontend but cannot run a private backend itself.</div>
+        <div class="row" style="margin-top:18px">
+          <button class="btn btn-primary" id="testApiBtn">Test Gemini connection</button>
+          <span id="apiStatus" class="small muted" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-help">
+      <div class="hero">
+        <div class="eyebrow">GET STARTED</div>
+        <h1>Build smarter with <span class="gradient">ForgeAI.</span></h1>
+        <p class="muted">Everything you need to start creating.</p>
+      </div>
+      <div class="stack" style="max-width:800px">
+        <div class="panel"><h3>1. Describe your idea</h3><p class="muted">Explain your business, audience, desired sections and design style. Specific prompts generally create more relevant websites.</p></div>
+        <div class="panel"><h3>2. Generate and customize</h3><p class="muted">Use local generation for a no-key prototype, or Gemini mode for AI-assisted HTML generation. Review the output before publishing.</p></div>
+        <div class="panel"><h3>3. Preview and edit</h3><p class="muted">Check desktop and mobile layouts. Apply code edits or use the design assistant to make supported changes.</p></div>
+        <div class="panel"><h3>4. Export and publish</h3><p class="muted">Export a standalone HTML file. For multi-page sites, server functionality, private API keys, databases and authentication, you'll need additional files or backend services.</p></div>
+        <div class="notice">This is a frontend application. User accounts, cloud project syncing, real subscriptions and secure production AI requests are not implemented in this single file.</div>
+      </div>
+    </section>
   </div>
-  <div class="notice warning" style="margin-top:16px"><b>For production:</b> move Gemini calls to a backend you control. Store the API key as a server-side secret, add authentication and rate limits, validate output, and never put a private API key in a public HTML file.</div>
-</section>
-</div>
 </main>
 </div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
 <script>
-(() => {
 "use strict";
+
 const $ = id => document.getElementById(id);
-const STORAGE = {settings:"forgeai_settings_v1",projects:"forgeai_projects_v1",current:"forgeai_current_v1"};
+const STORE = {
+  projects:"forgeai20_projects",
+  current:"forgeai20_current",
+  settings:"forgeai20_settings"
+};
+
 let currentHTML = "";
-let currentName = "Untitled Website";
-let selectedTemplate = "startup";
-let selectedStyle = "premium dark";
+let selectedCategory = "startup";
 let history = [];
-let currentPage = "builder";
-let businessPlan = "";
-let toastTimer;
+let historyIndex = -1;
+let previewMode = "desktop";
+let businessPlanText = "";
 
-function toast(message){const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove("show"),2800)}
-function safeParse(value,fallback){try{return JSON.parse(value)||fallback}catch{return fallback}}
-function getSettings(){return safeParse(localStorage.getItem(STORAGE.settings),{apiKey:"",model:"gemini-3.8-flash",temperature:0.8})}
-function setStatus(text){$("apiStatus").textContent=text}
-function updateCodeStats(){$("codeStats").textContent=($("codeEditor").value.length).toLocaleString()+" characters"}
-function setBusy(button,busy,label){if(busy){button.dataset.oldText=button.innerHTML;button.disabled=true;button.innerHTML='<span class="loading"></span>'+label}else{button.disabled=false;button.innerHTML=button.dataset.oldText||label}}
-function safeTitle(html){const m=html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);return m?m[1].replace(/<[^>]*>/g,"").trim().slice(0,100)||"Untitled Website":"Untitled Website"}
-function setPage(name){currentPage=name;document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id==="page-"+name));document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));const names={builder:"Website Builder",entrepreneur:"Entrepreneur AI",projects:"My Projects",plans:"Plans & Monetization",settings:"AI Settings",help:"Help & Setup"};$("crumbName").textContent=names[name]||"Workspace";$("sidebar").classList.remove("open");if(name==="projects")renderProjects()}
-function navigate(name){setPage(name)}
-document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.page)));
-document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.goto)));
+function safeRead(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function safeWrite(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch {
+    toast("Browser storage is full or unavailable. Export your work to keep it safe.");
+    return false;
+  }
+}
+
+function toast(message) {
+  const node = $("toast");
+  node.textContent = message;
+  node.classList.remove("hidden");
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => node.classList.add("hidden"), 3000);
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[char]);
+}
+
+function escapeAttr(value) {
+  return escapeHTML(value);
+}
+
+function slug(value) {
+  return String(value).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,55) || "my-website";
+}
+
+function inferName(prompt) {
+  const match = prompt.match(/\b(?:called|named|brand name is|brand is)\s+["“]?([A-Za-z0-9][A-Za-z0-9 &'-]{1,35})/i);
+  if (match) return match[1].replace(/[.,!?]+$/,"").trim();
+  const first = prompt.trim().split(/\s+/).slice(0,4).join(" ");
+  return first ? first.charAt(0).toUpperCase()+first.slice(1) : "YourBrand";
+}
+
+const categoryInfo = {
+  startup:{label:"Build faster. Grow smarter.",subtitle:"A better way to turn ambitious ideas into meaningful progress.",sections:["Powerful tools","Built for your workflow","Made to scale"]},
+  agency:{label:"Creative thinking. Exceptional results.",subtitle:"We build digital experiences that help ambitious brands stand out.",sections:["Strategy & design","Digital experiences","Results that matter"]},
+  portfolio:{label:"A little different. Entirely you.",subtitle:"Selected work, thoughtful ideas and a passion for creating things that matter.",sections:["Featured work","About me","Let's collaborate"]},
+  restaurant:{label:"Good food. Great memories.",subtitle:"Thoughtfully prepared, beautifully served and made to bring people together.",sections:["Our menu","Our story","Reserve a table"]},
+  ecommerce:{label:"Discover your next favorite.",subtitle:"Thoughtful design, quality essentials and a better everyday experience.",sections:["Featured collection","Why choose us","Customer favorites"]},
+  business:{label:"Built around your next big move.",subtitle:"Practical solutions, exceptional service and a partner invested in your success.",sections:["What we do","Our approach","Get in touch"]}
+};
+
+function makeLocalWebsite(prompt, category, style, extra) {
+  const name = inferName(prompt);
+  const info = categoryInfo[category] || categoryInfo.startup;
+  const themes = {
+    dark:{bg:"#0b0b12",surface:"#151520",text:"#f8f7ff",muted:"#b5b4c8",accent:"#a78bfa",hero:"#1e1733"},
+    light:{bg:"#f7f7fb",surface:"#ffffff",text:"#171725",muted:"#66667c",accent:"#6846e8",hero:"#eae5ff"},
+    vibrant:{bg:"#100b22",surface:"#201338",text:"#fffaff",muted:"#d1c3df",accent:"#ff8acb",hero:"#412060"},
+    minimal:{bg:"#f4f1ea",surface:"#fffdf7",text:"#24231f",muted:"#716e66",accent:"#9a5c3a",hero:"#e9e1d5"}
+  };
+  const t = themes[style] || themes.dark;
+  const wants = extra.split(",").map(s=>s.trim().toLowerCase()).filter(Boolean);
+  const requested = text => wants.some(item=>text.includes(item));
+  const sections = info.sections;
+  const features = category==="restaurant"
+    ? [["Seasonal ingredients","A menu inspired by fresh, thoughtfully sourced ingredients."],["Made with care","Every detail is considered, from the kitchen to your table."],["A place to gather","Good company and memorable meals belong together."]]
+    : category==="ecommerce"
+    ? [["Thoughtful quality","Everyday essentials selected with attention to detail."],["Designed to last","A considered approach to materials, function and style."],["Easy experience","A simpler way to discover what you love."]]
+    : category==="portfolio"
+    ? [["Selected projects","A collection of ideas brought to life through design and development."],["My approach","Curiosity, clarity and thoughtful execution in every project."],["Let's create","Have a project in mind? Let's turn it into something meaningful."]]
+    : [["Made for you","Thoughtfully designed around your goals and your audience."],["Simple by design","Clear experiences that make complicated things feel easier."],["Ready to grow","A flexible foundation for your next stage of growth."]];
+
+  const title = `${name} — ${info.label}`;
+  const cta = category==="restaurant"?"Explore the menu":category==="ecommerce"?"Explore collection":category==="portfolio"?"View my work":"Get started";
+  const cards = features.map((f,i)=>`
+    <article class="card">
+      <div class="number">0${i+1}</div>
+      <h3>${escapeHTML(f[0])}</h3>
+      <p>${escapeHTML(f[1])}</p>
+    </article>`).join("");
+
+  const extraSection = requested("testimonial") || requested("review")
+    ? `<section class="section"><div class="wrap center"><span class="eyebrow">KIND WORDS</span><h2>Good work speaks for itself.</h2><p class="lead">“A thoughtful experience from the first interaction to the last.”</p><p class="muted">Sample testimonial — replace with a genuine customer review.</p></div></section>`:"";
+
+  const pricingSection = requested("pricing")
+    ? `<section class="section alt"><div class="wrap center"><span class="eyebrow">SIMPLE OPTIONS</span><h2>Choose what fits.</h2><div class="grid"><article class="card"><h3>Starter</h3><p>Essential features for getting started.</p><h2>Contact us</h2></article><article class="card"><h3>Professional</h3><p>More flexibility for growing needs.</p><h2>Contact us</h2></article></div><p class="muted">Pricing not configured. Add your real offers before publishing.</p></div></section>`:"";
+
+  const faqSection = requested("faq")
+    ? `<section class="section"><div class="wrap"><h2>Frequently asked questions</h2><details><summary>How can I get started?</summary><p>Contact our team and we'll help you find the right starting point.</p></details><details><summary>Can this be customized?</summary><p>Yes. Get in touch to discuss your requirements.</p></details></div></section>`:"";
+
+  const contactSection = requested("contact") || requested("form")
+    ? `<section class="section alt" id="contact"><div class="wrap narrow"><h2>Let's talk.</h2><p class="muted">This sample form opens your email application. Configure a real form service for production.</p><form id="contactForm"><label>Your name<input name="name" required placeholder="Your name"></label><label>Your email<input name="email" type="email" required placeholder="you@example.com"></label><label>Your message<textarea name="message" required placeholder="Tell us about your project"></textarea></label><button class="button" type="submit">Prepare email</button></form></div></section>`:"";
+
+  const menu = sections.map((s,i)=>`<a href="#section${i+1}">${escapeHTML(s)}</a>`).join("");
+  const featureHTML = features.map((f,i)=>`<article class="card" id="section${i+1}"><div class="number">0${i+1}</div><h3>${escapeHTML(f[0])}</h3><p>${escapeHTML(f[1])}</p></article>`).join("");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="${escapeAttr(prompt.slice(0,155))}">
+<title>${escapeHTML(title)}</title>
+<style>
+:root{--bg:${t.bg};--surface:${t.surface};--text:${t.text};--muted:${t.muted};--accent:${t.accent};--hero:${t.hero};--border:color-mix(in srgb,var(--muted) 20%,transparent)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(1100px,90%);margin:auto}.narrow{max-width:650px}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:21px;font-weight:850;letter-spacing:-.8px}.brand span{color:var(--accent)}.links{display:flex;gap:23px;align-items:center;font-size:13px;color:var(--muted)}.links a:hover{color:var(--text)}.button{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:9px;background:var(--accent);color:white;padding:12px 19px;font-weight:750;cursor:pointer}.hero{padding:95px 0 100px;background:radial-gradient(ellipse at 80% 20%,var(--hero),transparent 60%)}.eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(40px,7vw,76px);line-height:1.05;letter-spacing:-3px;max-width:850px;margin:22px 0}.hero p{font-size:17px;max-width:640px;color:var(--muted)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.secondary{border:1px solid var(--border);border-radius:9px;padding:11px 18px}.section{padding:82px 0}.alt{background:var(--surface)}h2{font-size:clamp(28px,4vw,43px);line-height:1.15;letter-spacing:-1.4px;margin:13px 0 18px}.lead{font-size:16px;color:var(--muted);max-width:660px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:35px}.card{border:1px solid var(--border);border-radius:15px;padding:25px;background:var(--surface);scroll-margin-top:30px}.number{color:var(--accent);font-size:12px;font-weight:800}.card h3{font-size:20px;margin:15px 0 7px}.card p,.muted{color:var(--muted)}.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}.center .grid{text-align:left}.section details{border-bottom:1px solid var(--border);padding:17px 0}.section summary{cursor:pointer;font-weight:700}.section details p{color:var(--muted)}form{display:grid;gap:15px}form label{display:grid;gap:7px;font-size:13px}form input,form textarea{width:100%;padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text)}form textarea{min-height:110px}footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px}.footerrow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:700px){.nav{height:auto;min-height:72px;flex-wrap:wrap;padding:15px 0}.links{width:100%;gap:14px;flex-wrap:wrap}.hero{padding:65px 0}.hero h1{letter-spacing:-1.7px}.grid{grid-template-columns:1fr}.section{padding:60px 0}.wrap{width:88%}}
+</style>
+</head>
+<body>
+<header class="wrap nav"><a class="brand" href="#">${escapeHTML(name)}<span>.</span></a><nav class="links">${menu}<a href="#contact">Contact</a></nav><a class="button" href="#contact">${escapeHTML(cta)}</a></header>
+<main>
+<section class="hero"><div class="wrap"><span class="eyebrow">${escapeHTML(category)} / made for what comes next</span><h1>${escapeHTML(info.label)}</h1><p>${escapeHTML(prompt.length>25?prompt.slice(0,220):info.subtitle)}</p><div class="actions"><a class="button" href="#section1">${escapeHTML(cta)} ↗</a><a class="secondary" href="#about">Discover more</a></div></div></section>
+<section class="section"><div class="wrap"><span class="eyebrow">The difference</span><h2>Considered in every detail.</h2><p class="lead">${escapeHTML(info.subtitle)}</p><div class="grid">${featureHTML}</div></div></section>
+<section class="section alt" id="about"><div class="wrap"><span class="eyebrow">Our philosophy</span><h2>Good ideas deserve<br>great execution.</h2><p class="lead">We believe the best experiences feel effortless. Every detail has a purpose, every interaction feels intentional, and every visit leaves a lasting impression.</p></div></section>
+${extraSection}${pricingSection}${faqSection}${contactSection}
+</main>
+<footer><div class="wrap footerrow"><span>© ${new Date().getFullYear()} ${escapeHTML(name)}. All rights reserved.</span><span>Designed with care.</span></div></footer>
+<script>
+document.getElementById("contactForm")?.addEventListener("submit",function(e){e.preventDefault();const d=new FormData(this);const subject=encodeURIComponent("Website enquiry from "+d.get("name"));const body=encodeURIComponent("Name: "+d.get("name")+"\\nEmail: "+d.get("email")+"\\n\\n"+d.get("message"));location.href="mailto:hello@example.com?subject="+subject+"&body="+body;});
+<\/script>
+</body></html>`;
+}
+
+function addHistory(html) {
+  if (historyIndex < history.length-1) history = history.slice(0,historyIndex+1);
+  history.push(html);
+  if (history.length>30) history.shift();
+  historyIndex=history.length-1;
+  updateHistoryButtons();
+}
+
+function updateHistoryButtons() {
+  $("undoBtn").disabled=historyIndex<=0;
+  $("redoBtn").disabled=historyIndex<0||historyIndex>=history.length-1;
+}
+
+function setHTML(html, track=true) {
+  currentHTML=html;
+  $("codeEditor").value=html;
+  $("emptyPreview").classList.add("hidden");
+  $("frameWrap").classList.remove("hidden");
+  $("codeInfo").textContent=html.length.toLocaleString()+" characters";
+  renderPreview();
+  if(track) addHistory(html);
+  updateHistoryButtons();
+  safeWrite(STORE.current,html);
+}
+
+function renderPreview() {
+  if(!currentHTML) return;
+  $("previewFrame").srcdoc=currentHTML;
+  $("previewFrame").style.height=previewMode==="mobile"?"760px":"650px";
+  $("previewFrame").style.maxWidth=previewMode==="mobile"?"390px":"100%";
+  $("previewFrame").style.margin=previewMode==="mobile"?"0 auto":"0";
+  $("previewAddress").textContent="forgeai.local / "+previewMode;
+}
+
+function goToPage(page) {
+  document.querySelectorAll(".page").forEach(el=>el.classList.toggle("active",el.id==="page-"+page));
+  document.querySelectorAll("[data-page]").forEach(el=>el.classList.toggle("active",el.dataset.page===page));
+  const titles={builder:"Website Builder",projects:"My Projects",entrepreneur:"Entrepreneur AI",settings:"Settings & API",help:"Help & Guide"};
+  $("pageTitle").textContent=titles[page]||"ForgeAI Studio";
+  $("sidebar").classList.remove("open");
+  if(page==="projects") renderProjects();
+}
+
+document.querySelectorAll("[data-page]").forEach(button=>button.addEventListener("click",()=>goToPage(button.dataset.page)));
+
 $("menuBtn").addEventListener("click",()=>$("sidebar").classList.toggle("open"));
+$("newProjectBtn").addEventListener("click",()=>{goToPage("builder");$("prompt").focus();});
+$("categoryChips").addEventListener("click",e=>{
+  const button=e.target.closest("[data-value]");
+  if(!button)return;
+  selectedCategory=button.dataset.value;
+  document.querySelectorAll("#categoryChips .chip").forEach(c=>c.classList.toggle("active",c===button));
+});
 
-function showHTML(html,saveHistory=true){
- if(typeof html!=="string"||!html.trim()){toast("No HTML to preview.");return}
- if(saveHistory&&currentHTML&&currentHTML!==html){history.push(currentHTML);if(history.length>20)history.shift()}
- currentHTML=html;$("codeEditor").value=html;$("emptyPreview").style.display="none";$("previewFrame").style.display="block";$("previewFrame").srcdoc=html;$("previewStatus").textContent="Preview ready · "+html.length.toLocaleString()+" characters";currentName=safeTitle(html);$("currentState").textContent="Ready";updateCodeStats()
-}
-function refreshPreview(){const html=$("codeEditor").value.trim();if(!html){toast("Generate or paste HTML first.");return}showHTML(html,false);toast("Preview refreshed.")}
-function download(filename,content,type="text/html;charset=utf-8"){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)}
-function exportHTML(){const html=$("codeEditor").value.trim();if(!html){toast("Generate a website before exporting.");return}const name=(safeTitle(html).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"forgeai-website")+".html";download(name,html);toast("HTML export downloaded.")}
-function applyCode(){const html=$("codeEditor").value.trim();if(!html){toast("Paste or generate HTML first.");return}showHTML(html);toast("Code applied to preview.")}
-function saveDraft(silent=false){
- const html=$("codeEditor").value.trim()||currentHTML;
- if(!html){if(!silent)toast("Create a website before saving.");return}
- currentHTML=html;currentName=safeTitle(html);
- const projects=safeParse(localStorage.getItem(STORAGE.projects),[]);
- const id="p_"+Date.now();
- projects.unshift({id,name:currentName,html,updated:new Date().toISOString(),prompt:$("prompt").value});
- const seen=new Set();const unique=projects.filter(p=>{const key=p.html; if(seen.has(key))return false;seen.add(key);return true}).slice(0,40);
- try{localStorage.setItem(STORAGE.projects,JSON.stringify(unique));localStorage.setItem(STORAGE.current,JSON.stringify({html,name:currentName,prompt:$("prompt").value}));}
- catch(e){toast("Storage is full. Export your HTML to keep a backup.");return}
- renderProjects();if(!silent)toast("Draft saved in this browser.")
-}
-function renderProjects(){
- const projects=safeParse(localStorage.getItem(STORAGE.projects),[]);$("projectCount").textContent=projects.length;$("projectList").innerHTML="";
- $("noProjects").style.display=projects.length?"none":"block";
- projects.forEach(p=>{const card=document.createElement("div");card.className="project-card";const title=document.createElement("h3");title.textContent=p.name||"Untitled Website";const desc=document.createElement("p");desc.textContent=(p.updated?new Date(p.updated).toLocaleString():"Saved draft")+" · "+(p.html||"").length.toLocaleString()+" characters";const row=document.createElement("div");row.className="row";const open=document.createElement("button");open.className="button";open.textContent="Open";open.addEventListener("click",()=>{ $("prompt").value=p.prompt||"";showHTML(p.html);navigate("builder");toast("Project opened.")});const del=document.createElement("button");del.className="button danger";del.textContent="Delete";del.addEventListener("click",()=>{const next=safeParse(localStorage.getItem(STORAGE.projects),[]).filter(x=>x.id!==p.id);localStorage.setItem(STORAGE.projects,JSON.stringify(next));renderProjects();toast("Project deleted.")});row.append(open,del);card.append(title,desc,row);$("projectList").append(card)})
-}
-function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-
-function sampleHTML(template="startup",style="premium dark",prompt="A modern AI startup"){
- const light=style.includes("light"),bright=style.includes("colorful"),editorial=style.includes("editorial");
- const bg=light?"#f8fafc":bright?"#10101b":editorial?"#171310":"#09090d";
- const fg=light?"#10131c":"#f7f5ff",muted=light?"#596273":"#a6a1b7",accent=bright?"#fb7185":editorial?"#e8b86d":"#a78bfa";
- const title=template==="agency"?"Design that moves business forward.":template==="portfolio"?"Crafting digital experiences.":"Build faster. Dream bigger.";
- const brand=template==="agency"?"STUDIO / FORGE":template==="portfolio"?"ALEX MORGAN": "NOVA / AI";
- const desc=template==="agency"?"We build bold identities, memorable websites, and digital experiences for ambitious brands.":template==="portfolio"?"Designer and developer turning complex ideas into clean, expressive digital experiences.":"The smarter way to turn ambitious ideas into extraordinary products. Start building with tools designed for your next big leap.";
- const image=template==="portfolio"?"https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85":"https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=85";
- return `<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${brand} — ${template==="agency"?"Creative Studio":template==="portfolio"?"Portfolio":"Build the Future"}</title><meta name="description" content="${escapeHTML(prompt)}"><style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:${bg};color:${fg};font:16px/1.6 Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 7%;border-bottom:1px solid ${light?"#e5e7eb":"#ffffff17"}}.logo{font-weight:900;letter-spacing:1px;font-size:14px}.links{display:flex;gap:25px;align-items:center;color:${muted};font-size:13px}.btn{display:inline-block;border:0;border-radius:8px;background:${accent};color:${light?"#111":"#100b19"};padding:12px 19px;font-weight:800;font-size:13px}.hero{padding:90px 7% 80px;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center;max-width:1500px;margin:auto}.eyebrow{font-size:11px;letter-spacing:2px;color:${accent};font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(42px,6vw,78px);letter-spacing:-3px;line-height:1.02;margin:18px 0}.hero p{color:${muted};font-size:17px;max-width:540px;margin-bottom:28px}.hero-img{width:100%;height:370px;object-fit:cover;border-radius:18px;filter:saturate(.82)}.mini{color:${muted};font-size:12px;margin-top:16px}.section{padding:70px 7%;max-width:1500px;margin:auto}.section h2{font-size:clamp(30px,4vw,48px);letter-spacing:-1.5px;margin:10px 0}.lead{color:${muted};max-width:620px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.card{border:1px solid ${light?"#e2e8f0":"#ffffff1b"};background:${light?"#fff":"#ffffff06"};padding:25px;border-radius:13px}.card .num{font-size:12px;color:${accent};letter-spacing:1px}.card h3{font-size:19px;margin:18px 0 8px}.card p{font-size:14px;color:${muted};margin:0}.band{margin:25px 7% 70px;padding:48px;border-radius:18px;background:${light?"#e9e7ff":"#171321"};display:flex;justify-content:space-between;align-items:center;gap:20px}.band h2{font-size:clamp(26px,4vw,40px);margin:0}.footer{padding:30px 7%;border-top:1px solid ${light?"#e5e7eb":"#ffffff17"};display:flex;justify-content:space-between;gap:20px;color:${muted};font-size:12px}@media(max-width:760px){.nav{padding:0 5%;height:66px}.links{gap:12px}.links a:nth-child(2),.links a:nth-child(3){display:none}.hero{grid-template-columns:1fr;padding:55px 5%;gap:30px}.hero h1{letter-spacing:-2px}.hero-img{height:240px}.section{padding:48px 5%}.cards{grid-template-columns:1fr}.band{margin:15px 5% 45px;padding:28px;align-items:flex-start;flex-direction:column}.footer{padding:25px 5%;flex-direction:column}}button,a{transition:opacity .2s}button:hover,a:hover{opacity:.82}</style></head>
-<body><nav class="nav"><a class="logo" href="#">${brand}</a><div class="links"><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a><a class="btn" href="#contact">Let's talk ↗</a></div></nav>
-<main><section class="hero"><div><div class="eyebrow">✦ MADE FOR WHAT'S NEXT</div><h1>${title}</h1><p>${desc}</p><a class="btn" href="#contact">Explore what's possible ↗</a><div class="mini">Thoughtful design · Real impact · Built to grow</div></div><img class="hero-img" src="${image}" alt="Modern creative workspace"></section>
-<section class="section" id="features"><div class="eyebrow">WHY CHOOSE US</div><h2>Small details. Big difference.</h2><p class="lead">A focused approach to turning a good idea into something people love to use.</p><div class="cards"><article class="card"><div class="num">01 / STRATEGY</div><h3>Start with clarity</h3><p>Every great outcome starts with understanding the people you serve and the problem you solve.</p></article><article class="card"><div class="num">02 / DESIGN</div><h3>Make it memorable</h3><p>Beautiful, considered experiences that communicate value and make every interaction feel effortless.</p></article><article class="card"><div class="num">03 / GROWTH</div><h3>Ready for what's next</h3><p>Flexible foundations that evolve with your business, your customers, and your ambition.</p></article></div></section>
-<section class="section" id="about"><div class="eyebrow">OUR APPROACH</div><h2>Made with intention.</h2><p class="lead">No unnecessary complexity. Just thoughtful work, strong ideas, and a commitment to making the next version better than the last.</p></section>
-<section class="band" id="contact"><div><div class="eyebrow">YOUR NEXT CHAPTER</div><h2>Have an idea? Let's make it real.</h2></div><a class="btn" href="mailto:hello@example.com">Start a conversation ↗</a></section></main>
-<footer class="footer"><span>© ${new Date().getFullYear()} ${brand}. All rights reserved.</span><span>Built for the next big thing.</span></footer></body></html>`;
+function validateHTML(html) {
+  if(!html.trim()) throw new Error("The generated HTML is empty.");
+  if(!/<html[\s>]/i.test(html)||!/<\/html>/i.test(html)) throw new Error("The response was not a complete HTML document. Try again.");
+  return html;
 }
 
-async function gemini(prompt,opts={}){
- const settings=getSettings();const key=($("apiKey").value.trim()||settings.apiKey||"").trim();const model=($("modelName").value.trim()||settings.model||"gemini-3.8-flash").trim();
- if(!key)throw new Error("Add your Gemini API key in AI Settings first. You can use Sample Website mode without a key.");
- if(!/^[a-zA-Z0-9._-]+$/.test(model))throw new Error("Please enter a valid model ID.");
- const response=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+encodeURIComponent(model)+":generateContent?key="+encodeURIComponent(key),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({systemInstruction:{parts:[{text:opts.system||"You are ForgeAI Studio, a practical and high-quality assistant. Follow the user's requirements carefully. Be truthful about limitations."}]},contents:[{role:"user",parts:[{text:prompt}]}],generationConfig:{temperature:Number($("temperature").value)||0.8,maxOutputTokens:opts.maxTokens||12000}})});
- let data={};try{data=await response.json()}catch{}
- if(!response.ok){const detail=data?.error?.message||("HTTP "+response.status);throw new Error(detail+" Check your API key, model ID, quota, and Google AI Studio settings.")}
- const textOut=(data.candidates?.[0]?.content?.parts||[]).map(p=>p.text||"").join("\n").trim();
- if(!textOut)throw new Error("Gemini returned no text. Try a shorter prompt or another supported model.");
- return textOut;
-}
-function extractHTML(text){let s=text.trim().replace(/^```(?:html)?\s*/i,"").replace(/\s*```$/,"").trim();const start=s.search(/<!doctype html|<html[\s>]/i);if(start>=0)s=s.slice(start);const end=s.toLowerCase().lastIndexOf("</html>");if(end>=0)s=s.slice(0,end+7);if(!/<html[\s>]/i.test(s)||!/<\/html>/i.test(s))throw new Error("Gemini's response did not contain a complete HTML document. Try generating again with a more specific prompt.");return s}
-async function generateWebsite(){
- const prompt=$("prompt").value.trim();if(!prompt){toast("Describe the website you want to build first.");$("prompt").focus();return}
- const btn=$("generateBtn");setBusy(btn,true,"Forging your website...");
- try{
-  const text=await gemini("Create a complete, polished, production-quality single-file website based on the requirements below.\n\nWEBSITE BRIEF:\n"+prompt+"\n\nTEMPLATE: "+selectedTemplate+"\nVISUAL STYLE: "+selectedStyle+"\nEXTRA REQUIREMENTS: "+$("extra").value.trim()+"\n\nOUTPUT RULES:\n- Return ONLY a complete HTML document, starting with <!DOCTYPE html> and ending with </html>. No markdown fences or explanations.\n- Include all CSS in one <style> element and any necessary JavaScript in one <script> element.\n- Use semantic HTML, responsive mobile-first styling, accessible contrast, and polished spacing and typography.\n- Build a genuinely designed website with appropriate navigation, a strong hero, useful sections, calls to action, and a footer. Make the content specific to the user's brief, not generic filler.\n- Use remote images from reliable image URLs when helpful; provide alt text. Do not claim that fake buttons connect to real services. Keep forms demo-only unless a real endpoint is supplied.\n- Avoid external JS dependencies. Ensure the website works as a standalone index.html.\n- Do not include any API keys, credentials, or secrets in the generated page.",{maxTokens:16000,system:"You are an expert web designer and front-end engineer. Output complete HTML source only. Never put markdown around the code."});
-  const html=extractHTML(text);showHTML(html);toast("Your website has been generated.");setStatus("Gemini connected")
- }catch(e){toast(e.message||"Generation failed.");$("previewStatus").textContent="Generation failed — see notification";console.error(e)}
- finally{setBusy(btn,false,"✦ Generate with Gemini")}
-}
-async function editWebsite(){
- const instruction=$("editPrompt").value.trim();if(!instruction){toast("Describe the changes you want.");return}const source=$("codeEditor").value.trim();if(!source){toast("Generate a website first.");return}
- const btn=$("editBtn");setBusy(btn,true,"Editing your website...");
- try{const text=await gemini("Modify the existing HTML website according to the requested changes. Preserve unrelated content and working features. Return the ENTIRE updated standalone HTML document only. No markdown fences.\n\nREQUESTED CHANGES:\n"+instruction+"\n\nCURRENT HTML:\n"+source,{maxTokens:16000,system:"You are ForgeAI Studio's expert front-end editor. Return complete valid HTML source only. Never return partial snippets, explanations, or markdown fences."});showHTML(extractHTML(text));$("editPrompt").value="";toast("AI edits applied. Review your preview.");setStatus("Gemini connected")}
- catch(e){toast(e.message||"AI edit failed.");console.error(e)}finally{setBusy(btn,false,"✦ Apply AI edits")}
-}
-async function makeBusinessPlan(){
- const idea=$("businessIdea").value.trim();if(!idea){toast("Describe your business idea first.");return}
- const btn=$("businessBtn");setBusy(btn,true,"Building your plan...");
- $("businessOutput").textContent="Thinking through the business idea...";
- try{businessPlan=await gemini("Create a practical business plan for this idea.\nIDEA: "+idea+"\nSTARTING BUDGET: "+$("businessBudget").value+"\nTARGET MARKET: "+($("businessMarket").value.trim()||"Recommend a realistic target market")+"\nGOAL: "+$("businessGoal").value+"\n\nUse clear headings and include: 1) one-paragraph summary, 2) customer problem and target customers, 3) value proposition, 4) competitor categories and how to differentiate without inventing verified competitor facts, 5) minimum viable product, 6) first 30-day action plan, 7) low-cost customer validation, 8) suggested marketing and sales channels, 9) possible revenue model, 10) illustrative cost and revenue assumptions clearly labeled as estimates, 11) risks and mitigations, 12) three next actions. Be honest, practical, and specific. Avoid guaranteed income claims. Adapt to the budget and target market.",{maxTokens:8000,system:"You are a realistic startup advisor. Give actionable, cautious business guidance. Clearly distinguish estimates from facts. Use readable plain text and headings."});$("businessOutput").textContent=businessPlan;toast("Business plan created.")}
- catch(e){$("businessOutput").textContent="Could not create the plan.\n\n"+e.message;toast(e.message||"Business plan failed.")}
- finally{setBusy(btn,false,"✦ Build my business plan")}
+function extractHTML(text) {
+  let value=text.trim();
+  value=value.replace(/^```(?:html)?\s*/i,"").replace(/\s*```$/,"");
+  const start=value.toLowerCase().indexOf("<!doctype");
+  const alt=value.toLowerCase().indexOf("<html");
+  const index=start>=0?start:alt;
+  if(index>0)value=value.slice(index);
+  return validateHTML(value);
 }
 
-document.querySelectorAll("[data-template]").forEach(b=>b.addEventListener("click",()=>{selectedTemplate=b.dataset.template;document.querySelectorAll("[data-template]").forEach(x=>x.classList.toggle("selected",x===b));const examples={startup:"A premium AI startup website with a bold hero, product features, pricing, testimonials, FAQ, and a strong call to action.",agency:"A creative digital agency website with a striking hero, services, case studies, client testimonials, and a contact section.",portfolio:"A premium personal portfolio with an editorial hero, featured projects, skills, about section, and contact CTA."};$("prompt").value=examples[selectedTemplate]}));
-document.querySelectorAll("[data-style]").forEach(b=>b.addEventListener("click",()=>{selectedStyle=b.dataset.style;document.querySelectorAll("[data-style]").forEach(x=>x.classList.toggle("selected",x===b))}));
-$("generateBtn").addEventListener("click",generateWebsite);
-$("quickStartBtn").addEventListener("click",()=>{const html=sampleHTML(selectedTemplate,selectedStyle,$("prompt").value.trim()||"A modern creative business");showHTML(html);toast("Sample website loaded. Add a Gemini key for AI generation.")});
-$("editBtn").addEventListener("click",editWebsite);
-$("applyCodeBtn").addEventListener("click",applyCode);
-$("refreshPreviewBtn").addEventListener("click",refreshPreview);
-$("codeEditor").addEventListener("input",updateCodeStats);
-$("undoBtn").addEventListener("click",()=>{if(!history.length){toast("Nothing to undo yet.");return}showHTML(history.pop(),false);toast("Previous version restored.")});
-$("exportBtn").addEventListener("click",exportHTML);
-$("saveBtn").addEventListener("click",()=>saveDraft());
-$("copyCodeBtn").addEventListener("click",async()=>{const code=$("codeEditor").value;if(!code){toast("No code to copy.");return}try{await navigator.clipboard.writeText(code);toast("Code copied.")}catch{ $("codeEditor").focus();$("codeEditor").select();toast("Select and copy the code manually.")}});
-$("replaceBtn").addEventListener("click",()=>{const old=$("replaceText").value;const next=$("newText").value;const html=$("codeEditor").value;if(!old){toast("Enter the text to find.");return}if(!html){toast("Generate a website first.");return}if(!html.includes(old)){toast("That exact text was not found in the HTML source.");return}showHTML(html.replace(old,next));toast("First matching text replaced.")});
-$("colorBtn").addEventListener("click",()=>{let html=$("codeEditor").value;if(!html){toast("Generate a website first.");return}const color=$("bgColor").value;const style="<style id=\"forgeai-user-color\">:root{--forgeai-accent:"+color+";--accent:"+color+"}a,button,.btn,[class*=\"button\"],[class*=\"accent\"]{--forgeai-accent:"+color+"} .btn,button.primary{background-color:"+color+" !important}</style>";html=html.replace(/<style id=["']forgeai-user-color["'][\s\S]*?<\/style>/gi,"");html=html.replace(/<\/head>/i,style+"</head>");showHTML(html);toast("Accent color applied where supported.")});
-$("imageUrlBtn").addEventListener("click",()=>{const url=$("imageUrl").value.trim();if(!url){toast("Enter an image URL.");return}if(!/^https?:\/\//i.test(url)){toast("Use a valid HTTPS or HTTP image URL.");return}let html=$("codeEditor").value;if(!html){toast("Generate a website first.");return}const re=/<img\b[^>]*\bsrc\s*=\s*(["'])(.*?)\1[^>]*>/i;if(!re.test(html)){toast("No image element found in the HTML source.");return}html=html.replace(re,tag=>tag.replace(re,(whole,q)=>whole.replace(q+RegExp.$2+q,q+url+q)));showHTML(html);toast("First image URL updated.")});
-$("imageUpload").addEventListener("change",e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>4*1024*1024){toast("Please choose an image smaller than 4 MB.");e.target.value="";return}const reader=new FileReader();reader.onload=()=>{let html=$("codeEditor").value;if(!html){toast("Generate a website first.");return}const url=String(reader.result);const re=/<img\b[^>]*\bsrc\s*=\s*(["'])(.*?)\1[^>]*>/i;if(!re.test(html)){toast("No image element found in the HTML source.");return}html=html.replace(re,tag=>tag.replace(/\bsrc\s*=\s*(["']).*?\1/i,"src=\""+url+"\""));showHTML(html);toast("Uploaded image embedded in the current draft.")};reader.readAsDataURL(file)});
-document.querySelectorAll("[data-device]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-device]").forEach(x=>x.classList.toggle("active",x===b));const widths={desktop:"100%",tablet:"768px",mobile:"390px"};$("browser").style.width=widths[b.dataset.device];$("browser").style.maxWidth="100%";$("browser").style.margin="0 auto"}));
-
-function saveSettings(){
- const previous=getSettings();const settings={apiKey:$("apiKey").value.trim(),model:$("modelName").value.trim()||"gemini-3.8-flash",temperature:Number($("temperature").value)};
- try{localStorage.setItem(STORAGE.settings,JSON.stringify(settings));$("apiMessage").textContent=settings.apiKey?"Settings saved in this browser. Your key is not secure in a public front end.":"Model settings saved. Add a key to use Gemini.";setStatus(settings.apiKey?"Key saved locally":"Demo workspace");toast("Settings saved in this browser.");}
- catch(e){$("apiMessage").textContent="Could not save settings: browser storage may be disabled."}
+async function callGemini(prompt) {
+  const settings=safeRead(STORE.settings,{});
+  const key=$("apiKey").value.trim();
+  const model=$("modelName").value.trim();
+  if(!key)throw new Error("Add your Gemini API key in Settings first.");
+  if(!/^[a-zA-Z0-9._-]+$/.test(model))throw new Error("Please enter a valid model ID.");
+  const instruction=`You are an expert web designer and frontend developer. Create a complete, original, polished, responsive standalone HTML website for this request: ${prompt}. Return only a full HTML document including CSS and any necessary JavaScript. No Markdown fences. Use accessible semantic HTML, mobile responsive layouts, attractive typography, high-quality CSS, working in-page navigation, and realistic content. Do not claim that payment, authentication, database, email delivery, or backend services work unless implemented. Avoid external libraries.`;
+  const response=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+encodeURIComponent(model)+":generateContent?key="+encodeURIComponent(key),{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({contents:[{parts:[{text:instruction}]}],generationConfig:{temperature:0.8,maxOutputTokens:8192}})
+  });
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.error?.message||"Gemini request failed ("+response.status+"). Check your key, model and quota.");
+  const output=data.candidates?.[0]?.content?.parts?.map(p=>p.text||"").join("\n");
+  if(!output)throw new Error("Gemini returned no website. Check the API response and try again.");
+  return extractHTML(output);
 }
-$("saveSettingsBtn").addEventListener("click",saveSettings);
-$("toggleKeyBtn").addEventListener("click",()=>{const input=$("apiKey");input.type=input.type==="password"?"text":"password";$("toggleKeyBtn").textContent=input.type==="password"?"Show":"Hide"});
-$("temperature").addEventListener("input",()=>$("tempValue").textContent=$("temperature").value);
-$("testApiBtn").addEventListener("click",async()=>{saveSettings();const btn=$("testApiBtn");setBusy(btn,true,"Testing...");$("apiMessage").textContent="Contacting Gemini API...";try{const result=await gemini("Reply with exactly: ForgeAI Gemini connection successful.",{maxTokens:60,system:"Follow the user exactly and reply briefly."});$("apiMessage").textContent="Connection successful. Response: "+result.slice(0,180);$("apiMessage").className="tiny";$("apiMessage").style.color="#6ee7b7";setStatus("Gemini connected");toast("Gemini API connection successful.")}catch(e){$("apiMessage").textContent="Connection failed: "+e.message;$("apiMessage").style.color="#fda4af";setStatus("API needs attention");toast("API test failed. Check settings.")}finally{setBusy(btn,false,"Test Gemini API")}});
-$("clearKeyBtn").addEventListener("click",()=>{const s=getSettings();s.apiKey="";localStorage.setItem(STORAGE.settings,JSON.stringify(s));$("apiKey").value="";$("apiMessage").textContent="Saved key cleared from this browser.";setStatus("Demo workspace");toast("Saved API key cleared.")});
-$("resetAppBtn").addEventListener("click",()=>{if(!confirm("Clear the current website draft and editor? Saved projects and API settings will remain."))return;history=[];currentHTML="";$("codeEditor").value="";$("prompt").value="";$("previewFrame").removeAttribute("srcdoc");$("previewFrame").style.display="none";$("emptyPreview").style.display="grid";$("previewStatus").textContent="No website generated yet";$("currentState").textContent="Empty";updateCodeStats();toast("Current draft cleared.")});
 
-$("businessBtn").addEventListener("click",makeBusinessPlan);
-$("copyBusinessBtn").addEventListener("click",async()=>{if(!businessPlan){toast("Create a business plan first.");return}try{await navigator.clipboard.writeText(businessPlan);toast("Business plan copied.")}catch{toast("Clipboard unavailable. Select and copy the plan.")}});
-$("makeWebsiteBtn").addEventListener("click",()=>{const idea=$("businessIdea").value.trim();if(!idea){toast("Add your business idea first.");return}$("prompt").value="Create a polished, conversion-focused website for this business idea: "+idea+". Target market: "+($("businessMarket").value.trim()||"identify a suitable audience")+". Include a clear value proposition, relevant services or products, benefits, social proof placeholders, FAQs, and contact CTA. Do not invent real customer testimonials or metrics.";navigate("builder");toast("Business idea sent to the website brief.")});
-$("newProjectBtn").addEventListener("click",()=>{if($("codeEditor").value.trim()&&!confirm("Start a new draft? Save your current work first if you want to keep it."))return;history=[];currentHTML="";$("codeEditor").value="";$("prompt").value="";$("previewFrame").style.display="none";$("emptyPreview").style.display="grid";$("previewStatus").textContent="New blank canvas";$("currentState").textContent="Empty";updateCodeStats();navigate("builder")});
-$("creatorMockBtn").addEventListener("click",()=>toast("Demo only: real subscriptions and payment processing are not connected."));
-$("agencyMockBtn").addEventListener("click",()=>toast("Demo only: agency accounts and team features are not connected."));
-$("adMockBtn").addEventListener("click",()=>toast("Demo only: no advertiser or ad network is connected."));
+$("generateBtn").addEventListener("click",async()=>{
+  const prompt=$("prompt").value.trim();
+  if(!prompt){toast("Describe your website first.");$("prompt").focus();return;}
+  const mode=$("generationMode").value;
+  const button=$("generateBtn");
+  button.disabled=true;
+  button.textContent="✦ Building your website...";
+  $("generationStatus").textContent=mode==="gemini"?"Waiting for Gemini...":"Creating a local website from your brief...";
+  try {
+    let html;
+    if(mode==="gemini") html=await callGemini(prompt+" Category: "+selectedCategory+". Visual style: "+$("style").value+". Extra requirements: "+$("extra").value);
+    else html=makeLocalWebsite(prompt,selectedCategory,$("style").value,$("extra").value);
+    setHTML(html);
+    $("generationStatus").textContent=mode==="gemini"?"Gemini generated your website. Review it before publishing.":"Local template generated. Connect Gemini for more flexible AI-generated designs.";
+    toast("Website generated successfully.");
+  } catch(error) {
+    $("generationStatus").textContent=error.message;
+    toast(error.message);
+  } finally {
+    button.disabled=false;
+    button.textContent="✦ Generate website";
+  }
+});
 
-function init(){
- const settings=getSettings();$("apiKey").value=settings.apiKey||"";$("modelName").value=settings.model||"gemini-3.8-flash";$("temperature").value=settings.temperature??0.8;$("tempValue").textContent=$("temperature").value;
- setStatus(settings.apiKey?"Key saved locally":"Demo workspace");
- const saved=safeParse(localStorage.getItem(STORAGE.current),null);if(saved?.html){$("prompt").value=saved.prompt||"";showHTML(saved.html,false);$("previewStatus").textContent="Restored local draft"}else{$("currentState").textContent="Empty"}
- renderProjects();updateCodeStats();
+$("applyCodeBtn").addEventListener("click",()=>{
+  try {setHTML(validateHTML($("codeEditor").value));toast("Code applied to preview.");}
+  catch(error){toast(error.message);}
+});
+
+$("undoBtn").addEventListener("click",()=>{
+  if(historyIndex<=0)return;
+  historyIndex--;
+  currentHTML=history[historyIndex];
+  $("codeEditor").value=currentHTML;
+  renderPreview();
+  safeWrite(STORE.current,currentHTML);
+  updateHistoryButtons();
+});
+
+$("redoBtn").addEventListener("click",()=>{
+  if(historyIndex>=history.length-1)return;
+  historyIndex++;
+  currentHTML=history[historyIndex];
+  $("codeEditor").value=currentHTML;
+  renderPreview();
+  safeWrite(STORE.current,currentHTML);
+  updateHistoryButtons();
+});
+
+$("copyCodeBtn").addEventListener("click",async()=>{
+  if(!currentHTML)return toast("Generate a website first.");
+  try {await navigator.clipboard.writeText(currentHTML);toast("HTML copied.");}
+  catch { $("codeEditor").focus();$("codeEditor").select();toast("Select the code and copy it manually.");}
+});
+
+$("exportBtn").addEventListener("click",downloadHTML);
+function downloadHTML() {
+  if(!currentHTML)return toast("Generate a website first.");
+  const blob=new Blob([currentHTML],{type:"text/html;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const link=document.createElement("a");
+  link.href=url;
+  link.download=slug(inferName($("prompt").value||"my-website"))+".html";
+  document.body.appendChild(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  toast("HTML download started.");
 }
-init();
-})();
+
+$("saveBtn").addEventListener("click",saveProject);
+function saveProject() {
+  if(!currentHTML)return toast("Generate a website first.");
+  const projects=safeRead(STORE.projects,[]);
+  const name=inferName($("prompt").value||"My website");
+  const existing=projects.find(p=>p.html===currentHTML);
+  if(existing){existing.name=name;existing.updated=new Date().toISOString();}
+  else projects.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),name,html:currentHTML,prompt:$("prompt").value,category:selectedCategory,updated:new Date().toISOString()});
+  if(safeWrite(STORE.projects,projects.slice(0,100)))toast("Project saved in this browser.");
+  renderProjects();
+}
+
+function renderProjects() {
+  const projects=safeRead(STORE.projects,[]);
+  $("projectCount").textContent=projects.length;
+  const grid=$("projectsGrid");
+  if(!projects.length){
+    grid.innerHTML='<div class="empty">No saved projects yet.<br><br>Create a website and press Save project.</div>';
+    return;
+  }
+  grid.innerHTML=projects.map(p=>`
+    <article class="project-card">
+      <div class="project-icon">✦</div>
+      <h3>${escapeHTML(p.name||"Untitled project")}</h3>
+      <p>${escapeHTML(p.category||"Website")} · ${escapeHTML(new Date(p.updated).toLocaleDateString())}</p>
+      <p>${escapeHTML((p.prompt||"No description").slice(0,120))}</p>
+      <div class="row">
+        <button class="btn btn-primary" data-load="${escapeAttr(p.id)}">Open</button>
+        <button class="btn" data-download="${escapeAttr(p.id)}">Export</button>
+        <button class="btn btn-danger" data-delete="${escapeAttr(p.id)}">Delete</button>
+      </div>
+    </article>`).join("");
+  grid.querySelectorAll("[data-load]").forEach(b=>b.addEventListener("click",()=>{
+    const p=safeRead(STORE.projects,[]).find(x=>x.id===b.dataset.load);
+    if(!p)return;
+    $("prompt").value=p.prompt||p.name;
+    selectedCategory=p.category||"startup";
+    document.querySelectorAll("#categoryChips .chip").forEach(c=>c.classList.toggle("active",c.dataset.value===selectedCategory));
+    setHTML(p.html);
+    goToPage("builder");
+    toast("Project opened.");
+  }));
+  grid.querySelectorAll("[data-download]").forEach(b=>b.addEventListener("click",()=>{
+    const p=safeRead(STORE.projects,[]).find(x=>x.id===b.dataset.download);
+    if(p){currentHTML=p.html;downloadHTML();}
+  }));
+  grid.querySelectorAll("[data-delete]").forEach(b=>b.addEventListener("click",()=>{
+    if(!confirm("Delete this saved project?"))return;
+    safeWrite(STORE.projects,safeRead(STORE.projects,[]).filter(x=>x.id!==b.dataset.delete));
+    renderProjects();
+    toast("Project deleted.");
+  }));
+}
+
+$("resetBtn").addEventListener("click",()=>{
+  if(!confirm("Clear the current editor? Save your project first if you need it."))return;
+  currentHTML="";
+  history=[];historyIndex=-1;
+  $("codeEditor").value="";
+  $("frameWrap").classList.add("hidden");
+  $("emptyPreview").classList.remove("hidden");
+  $("codeInfo").textContent="No website generated";
+  $("generationStatus").textContent="Ready to build.";
+  safeWrite(STORE.current,"");
+  updateHistoryButtons();
+  toast("Editor reset.");
+});
+
+$("replaceBtn").addEventListener("click",()=>{
+  const from=$("replaceFrom").value;
+  const to=$("replaceTo").value;
+  if(!currentHTML)return toast("Generate a website first.");
+  if(!from)return toast("Enter the text you want to replace.");
+  if(!currentHTML.includes(from))return toast("That exact text was not found in the HTML.");
+  setHTML(currentHTML.split(from).join(to));
+  toast("Text replaced.");
+});
+
+$("colorBtn").addEventListener("click",()=>{
+  if(!currentHTML)return toast("Generate a website first.");
+  const color=$("accent").value;
+  let html=currentHTML;
+  if(/--accent\s*:/i.test(html)) html=html.replace(/--accent\s*:\s*[^;]+/i,"--accent:"+color);
+  else if(/:root\s*\{/i.test(html)) html=html.replace(/:root\s*\{/i,":root{--accent:"+color+";");
+  else return toast("Could not find a CSS root to update. Edit the CSS directly.");
+  setHTML(html);
+  toast("Accent color updated.");
+});
+
+$("applyDesignBtn").addEventListener("click",async()=>{
+  if(!currentHTML)return toast("Generate a website first.");
+  const request=$("editPrompt").value.trim();
+  if(!request)return toast("Describe the design change first.");
+  const mode=$("generationMode").value;
+  const button=$("applyDesignBtn");
+  button.disabled=true;
+  button.textContent="Applying...";
+  try {
+    if(mode==="gemini"){
+      const revised=await callGemini("Improve this existing HTML website according to this request: "+request+"\nReturn the complete revised HTML only. Preserve existing working features where possible.\n\nCURRENT HTML:\n"+currentHTML);
+      setHTML(revised);
+    } else {
+      const p=$("prompt").value+"; "+request;
+      $("prompt").value=p;
+      setHTML(makeLocalWebsite(p,selectedCategory,$("style").value,$("extra").value));
+      $("generationStatus").textContent="Local mode created a refreshed layout from your updated brief. For precise edits, use Gemini mode or Code Studio.";
+    }
+    $("editPrompt").value="";
+    toast("Design updated.");
+  } catch(error) {toast(error.message);}
+  finally {button.disabled=false;button.textContent="Apply design request";}
+});
+
+document.querySelectorAll("[data-preview]").forEach(b=>b.addEventListener("click",()=>{
+  previewMode=b.dataset.preview;
+  renderPreview();
+  toast(previewMode==="mobile"?"Mobile preview selected.":"Desktop preview selected.");
+}));
+
+$("openPreviewBtn").addEventListener("click",()=>{
+  if(!currentHTML)return toast("Generate a website first.");
+  const blob=new Blob([currentHTML],{type:"text/html"});
+  const url=URL.createObjectURL(blob);
+  const win=window.open(url,"_blank","noopener");
+  if(!win)toast("Popup blocked. Allow popups to open the preview.");
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+});
+
+function loadSettings() {
+  const settings=safeRead(STORE.settings,{});
+  $("generationMode").value=settings.mode||"local";
+  $("apiKey").value=settings.key||"";
+  $("modelName").value=settings.model||"gemini-2.5-flash";
+}
+
+$("saveSettingsBtn").addEventListener("click",()=>{
+  const settings={mode:$("generationMode").value,key:$("apiKey").value.trim(),model:$("modelName").value.trim()};
+  if(safeWrite(STORE.settings,settings))toast("Settings saved in this browser.");
+});
+
+$("showKey").addEventListener("change",()=>$("apiKey").type=$("showKey").checked?"text":"password");
+
+$("testApiBtn").addEventListener("click",async()=>{
+  const status=$("apiStatus");
+  status.textContent="Testing...";
+  try {
+    const key=$("apiKey").value.trim();
+    const model=$("modelName").value.trim();
+    if(!key)throw new Error("Enter an API key first.");
+    const response=await fetch("https://generativelanguage.googleapis.com/v1beta/models/"+encodeURIComponent(model)+":generateContent?key="+encodeURIComponent(key),{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({contents:[{parts:[{text:"Reply with OK"}]}]})
+    });
+    const data=await response.json().catch(()=>({}));
+    if(!response.ok)throw new Error(data.error?.message||"Request failed ("+response.status+").");
+    status.textContent="Connection successful.";
+    status.className="small success";
+  } catch(error) {
+    status.textContent=error.message;
+    status.className="small";
+  }
+});
+
+$("businessBtn").addEventListener("click",async()=>{
+  const idea=$("businessIdea").value.trim();
+  if(!idea)return toast("Enter your business idea first.");
+  const budget=$("businessBudget").value;
+  const button=$("businessBtn");
+  button.disabled=true;button.textContent="Building plan...";
+  try {
+    if($("generationMode").value==="gemini"){
+      businessPlanText=await callGemini("Create a practical business plan as a polished standalone HTML document for this business idea: "+idea+". Starting budget: "+budget+". Include customer segment, value proposition, competitor research tasks, pricing hypotheses, marketing plan, 30-day validation roadmap, estimated costs, risks, and measurable milestones. Label estimates as assumptions, do not invent verified market research, and do not promise revenue. Use a readable light theme.");
+      $("businessOutput").innerHTML='<p class="success">AI-generated business plan is ready to download.</p>';
+    } else {
+      businessPlanText=`BUSINESS PLAN\n\nIDEA\n${idea}\n\nSTARTING BUDGET\n${budget}\n\n1. PROBLEM AND CUSTOMER\nIdentify one specific customer group with a costly or frustrating problem. Interview at least 10 potential customers before building the complete product.\n\n2. VALUE PROPOSITION\nExplain in one sentence what problem you solve, for whom, and why your approach is useful. Test this message with real potential customers.\n\n3. PRODUCT MVP\nBuild the smallest version that solves one core problem. Avoid expensive features until users validate the need.\n\n4. REVENUE MODEL\nPossible models include a one-time fee, subscription, or service package. Test willingness to pay; do not assume customers will pay without evidence.\n\n5. CUSTOMER ACQUISITION\nCreate a simple landing page, publish useful demonstrations, contact relevant prospects personally, and measure replies, sign-ups, and paid conversions.\n\n6. BUDGET PLAN\nStarting budget: ${budget}\nPrioritize essential hosting, tools, customer interviews, and product validation. Keep a record of all costs. Confirm current prices before purchasing.\n\n7. FIRST 30 DAYS\nWeek 1: Interview potential customers and research alternatives.\nWeek 2: Build a basic demo and landing page.\nWeek 3: Show the demo to prospects and gather feedback.\nWeek 4: Test a small paid pilot and decide what to improve.\n\n8. RISKS\nPotential risks include weak demand, strong competitors, low conversion, support costs, privacy concerns, and technical limitations. Validate these risks early.\n\n9. SUCCESS METRICS\nTrack customer interviews, qualified leads, demo usage, conversion rate, customer feedback, costs, and retention.\n\nNEXT STEP\nChoose one customer group and speak to five potential customers this week. Treat this plan as a starting hypothesis, not verified financial advice or guaranteed results.`;
+      $("businessOutput").innerHTML="<div class='notice'>Local business-plan draft created. It is a planning template, not verified market research or financial forecasting.</div><pre style='white-space:pre-wrap;line-height:1.8;color:#dddde8;font:13px/1.8 inherit'>"+escapeHTML(businessPlanText)+"</pre>";
+    }
+    $("businessDownload").classList.remove("hidden");
+  } catch(error) {toast(error.message);}
+  finally {button.disabled=false;button.textContent="✦ Generate business plan";}
+});
+
+$("businessDownload").addEventListener("click",()=>{
+  if(!businessPlanText)return;
+  const blob=new Blob([businessPlanText],{type:"text/plain;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download="forgeai-business-plan.txt";a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+
+loadSettings();
+try {
+  const draft=safeRead(STORE.current,"");
+  if(typeof draft==="string"&&draft.trim()){
+    setHTML(draft);
+  }
+} catch(error) {
+  console.error("Could not restore draft",error);
+}
+renderProjects();
+updateHistoryButtons();
 </script>
 </body>
 </html>
